@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Mail — I-Mail.in</title>
+    <style>
+        /* Medium-like "medius" style */
+        :root {
+            --accent: #1f6feb;
+            --muted: #6b7280;
+            --body: #111827;
+            --max-width: 760px;
+        }
+
+        html,
+        body {
+            height: 100%
+        }
+
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            color: var(--body);
+            background: #f6f7f9;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            padding: 48px 16px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .sheet {
+            background: white;
+            width: 100%;
+            max-width: var(--max-width);
+            border-radius: 8px;
+            box-shadow: 0 6px 20px rgba(20, 30, 50, 0.06);
+            overflow: hidden;
+            border: 1px solid #e6e9ee;
+        }
+
+        .header {
+            padding: 28px 36px;
+            border-bottom: 1px solid #f0f2f5;
+        }
+
+        .subject {
+            margin: 0;
+            font-size: 24px;
+            line-height: 1.25;
+            font-weight: 700;
+            color: var(--body);
+        }
+
+        .meta {
+            margin-top: 8px;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .container {
+            padding: 28px 36px;
+        }
+
+        .from-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 18px;
+        }
+
+        .avatar {
+            min-width: 44px;
+            min-height: 44px;
+            border-radius: 999px;
+            background: linear-gradient(135deg, #e6f0ff, #dbeafe);
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .from-info {
+            font-size: 14px;
+        }
+
+        .from-info .name {
+            font-weight: 600;
+            color: var(--body);
+        }
+
+        .from-info .email {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .body {
+            margin-top: 8px;
+            font-size: 16px;
+            line-height: 1.8;
+            color: #263244;
+            white-space: pre-wrap;
+            /* respects \n */
+        }
+
+        .attachments {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .attachment {
+            border: 1px solid #eef2f6;
+            background: #fafbfd;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            color: #2b3440;
+            display: inline-flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .footer {
+            border-top: 1px solid #f0f2f5;
+            padding: 18px 36px;
+            color: var(--muted);
+            font-size: 13px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Print rules - minimal */
+        @media print {
+            body {
+                background: white;
+                padding: 0
+            }
+
+            .sheet {
+                box-shadow: none;
+                border: none;
+                border-radius: 0
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <article class="sheet" id="mail-print">
+        <header class="header">
+            <h1 class="subject">Meeting Reminder — Project Sync</h1>
+            <div class="meta">From <strong>team@i-mail.in</strong> · Oct 14, 2025 · To: you@i-mail.in</div>
+        </header>
+
+        <div class="container">
+            <div class="from-row">
+                <div class="avatar">T</div>
+                <div class="from-info">
+                    <div class="name">Team I-Mail</div>
+                    <div class="email">team@i-mail.in</div>
+                </div>
+            </div>
+
+            <div class="body">
+                Hello Asif,
+
+                This is a friendly reminder about tomorrow’s meeting at 10:00 AM. Please review the attached agenda
+                before joining.
+
+                Agenda:
+                1. Project updates
+                2. Blockers & next steps
+                3. Q/A
+
+                Best regards,
+                Team I-Mail
+            </div>
+
+            <div class="attachments" aria-label="attachments">
+                <div class="attachment">agenda.pdf</div>
+                <div class="attachment">notes.docx</div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div>Printed from I-Mail.in</div>
+            <div>Page 1</div>
+        </footer>
+    </article>
+    <script>
+        const mailcontainer = document.getElementById("mail-print");
+        window.print();
+        window.close();
+    </script>
+</body>
+
+</html>
