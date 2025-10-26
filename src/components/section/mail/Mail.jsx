@@ -34,7 +34,7 @@ const Mail = () => {
           {/* ===== Mail Content ===== */}
           <MailContent mail={mail} />
           {/* ===== Footer Actions ===== */}
-          <MailFooter />
+          <MailFooter mail={mail} />
         </div>
       </div>
     </>

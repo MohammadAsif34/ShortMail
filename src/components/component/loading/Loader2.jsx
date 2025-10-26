@@ -1,18 +1,11 @@
 import React from "react";
 
-const Loader = () => {
+const Loader = ({ className = " w-[100px] h-[100px]" }) => {
   return (
     <div
-      className="loader"
-      style={{
-        display: "flex",
-        gap: "6px",
-        justifyContent: "center",
-        alignItems: "center",
-        width: "100px",
-        height: "100px",
-      }}
+      className={`loader flex gap-2 justify-center items-center ${className}`}
     >
+      {" "}
       <style>{`
             @keyframes scale {
                 0%, 50%, 100% { transform: scaleY(0.05); }
@@ -34,7 +27,7 @@ const Loader = () => {
       <span></span>
       <span></span>
       <span></span>
-      {/* <span></span> */}
+      <span></span>
     </div>
   );
 };

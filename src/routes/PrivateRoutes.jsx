@@ -17,11 +17,13 @@ const PrivateRoutes = ({ children }) => {
       if (!auth?.token) return dispatch(logout());
       const res = await dispatch(fetchUser());
       if (fetchUser.rejected.match(res)) {
+        // dispatch(logout({ dispatch, clearUser: true, clearMail: true }));
         dispatch(logout());
         return;
       }
       const res2 = await dispatch(fetchMails());
       if (fetchMails.rejected.match(res2)) {
+        // dispatch(logout({ dispatch, clearUser: true, clearMail: true }));
         dispatch(logout());
         return;
       }

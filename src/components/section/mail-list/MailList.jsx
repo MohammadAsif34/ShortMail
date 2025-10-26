@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from "react";
-import NoMailFound from "../../component/NoMailFound";
-import Mail from "../../../data/dummyMail.json";
 import { Link, useLocation } from "react-router-dom";
-import { RefreshCcw, MoreHorizontal, Search, Filter } from "lucide-react";
-import MailListCard from "./MailListCard";
 import MailListHeader from "./MailListHeader";
+
 import { useSelector } from "react-redux";
-import Loader from "../../component/loading/Loader";
-import Loading from "../../component/loading/Loading";
+import MailListCard from "./MailListCard";
+import NoMailFound from "../../component/NoMailFound";
+import { paginate } from "../../../utils/paginate";
 
 const MailList = () => {
   const [mail, setMail] = useState([]);
@@ -46,32 +44,33 @@ const MailList = () => {
 
   const BtoA = (id) => btoa(id);
 
+  const [page, setPage] = useState(1);
+  const { start, end, pageData, totalPage } = paginate(mail, page, 25);
+
   return (
     <>
       <div className="w-full h-full flex flex-col">
         {/* ===== HEADER ===== */}
-        <MailListHeader type={type} />
+        <MailListHeader
+          type={type}
+          start={start}
+          end={end}
+          totalPage={totalPage}
+          setPage={setPage}
+        />
 
         {mail?.length === 0 ? (
           <NoMailFound />
         ) : (
           <div className="flex-1 overflow-y-auto custom-scroll p-1 bg-gray-50">
             {/* ===== MAIL LIST ===== */}
-            {mail?.map((m, i) => (
-              // <Link key={m?._id || i} to={BtoA(m._id)} className="">
-              <MailListCard key={m._id || i} mail={m} />
-              // </Link>
+            {pageData?.map((m, i) => (
+              <Link key={m?._id || i} to={BtoA(m._id)} className="">
+                <MailListCard key={m._id || i} mail={m} />
+              </Link>
             ))}
           </div>
         )}
-        {/* ===== FOOTER =====
-        <div className="px-4 py-2 border-t border-gray-200 bg-white text-sm text-gray-600 flex items-center justify-between">
-          <span>Showing {Mail.length} emails</span>
-          <div className="flex items-center space-x-2">
-            <button className="text-blue-600 hover:underline">Previous</button>
-            <button className="text-blue-600 hover:underline">Next</button>
-          </div>
-        </div> */}
       </div>
     </>
   );

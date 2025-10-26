@@ -5,10 +5,11 @@ import { registerUser } from "../../../api/authApi";
 const Register = () => {
   const navigate = useNavigate();
 
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
+  const [fullname, setFullname] = useState("");
+  const [mail, setMail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
   const [loading, setLoading] = useState(false);
 
   const handleRegister = async (e) => {
@@ -17,9 +18,14 @@ const Register = () => {
     setLoading(true);
 
     try {
-      await registerUser(name, email, password);
-      alert("Registration successful! Please login.");
-      navigate("/login");
+      const res = await registerUser(fullname, mail, password);
+      if (res.status === "success") {
+        setSuccess(res.message);
+        setTimeout(() => {
+          navigate("/login");
+        }, 2000);
+      }
+      // alert("Registration successful! Please login.");
     } catch (err) {
       setError(err.response?.data?.message || "Registration failed");
     } finally {
@@ -36,20 +42,27 @@ const Register = () => {
         onSubmit={handleRegister}
         className="min-w-xs md:w-xl px-8  flex flex-col gap-8"
       >
-        {error && <p style={{ color: "red" }}>{error}</p>}
+        <div className="min-h-8 text-center">
+          {success && (
+            <p className="text-green-500 font-semibold ">
+              {success} <br /> <span>redirecting...</span>
+            </p>
+          )}
+          {error && <p className="text-red-500 ">{error}</p>}
+        </div>
         <input
           type="text"
           placeholder="Full Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
+          value={fullname}
+          onChange={(e) => setFullname(e.target.value)}
           required
           className="w-full h-10 px-4 border border-gray-300 rounded-lg outline-0 focus:ring-2 focus ring-blue-300"
         />
         <input
           type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          placeholder="mail"
+          value={mail}
+          onChange={(e) => setMail(e.target.value)}
           required
           className="w-full h-10 px-4 border border-gray-300 rounded-lg outline-0 focus:ring-2 focus ring-blue-300"
         />
@@ -71,7 +84,10 @@ const Register = () => {
         </button>
       </form>
       <p className="text-xs my-6 text-end px-8">
-        Already have an account? <Link to="/login" className="text-blue-500 underline">Login</Link>
+        Already have an account?{" "}
+        <Link to="/login" className="text-blue-500 underline">
+          Login
+        </Link>
       </p>
     </div>
   );

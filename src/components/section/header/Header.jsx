@@ -1,9 +1,12 @@
 import { Search } from "lucide-react";
 import React, { useState } from "react";
 import ProfileDropdown from "../../header/ProfileDropdown";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
+  const user = useSelector((s) => s.user.data);
+
   return (
     <>
       <header className="hidden min-md:flex p py-2   items-center justify-between">
@@ -17,11 +20,11 @@ const Header = () => {
         </div>
         <div className=" mr-4  relative ">
           <button
-            className="flex items-center focus:outline-2 outline-blue-500 rounded-full"
+            className="flex items-center focus:outline-2 outline-blue-500 rounded-full border-2 border-blue-500"
             onClick={() => setOpen((p) => !p)}
           >
             <img
-              src="https://i.pravatar.cc/40?img=3"
+              src={user?.picture || "https://i.pravatar.cc/1000?img=12"}
               alt="user"
               className="w-10 h-10 rounded-full"
             />

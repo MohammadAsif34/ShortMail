@@ -6,27 +6,24 @@ import {
   Lock,
   Globe,
   Save,
-  ChevronRight,
-  ClosedCaption,
-  DoorClosed,
-  X,
   HelpCircle,
-  Info,
   List,
   InfoIcon,
+  ArrowLeft,
 } from "lucide-react";
 
 const Setting = ({ setOpen }) => {
+  const user = useSelector((s) => s.user.data);
   const [activeTab, setActiveTab] = useState("profile");
   const [mobOpen, setMobopen] = useState(false);
 
   return (
-    <div className="flex h-full bg-gray-50 text-gray-800  overflow-hidden border border-gray-200 ">
+    <div className="flex h-full bg-gray-50 text-gray-800  overflow-hidden border border-gray-200 transition-transform ">
       {/* Left Sidebar */}
       <aside
         className={` ${
           mobOpen ? "w-64" : "w-15"
-        } w -14 md:w-64 bg-white shadow-md border-r border-gray-300`}
+        } w -14 md:w-64 bg-gray-100 shadow-md border-r border-gray-100 transition-all duration-500 ease-in-out `}
       >
         <div className="p-2  md:p-6 border-b border-gray-300">
           <h2 className="hidden md:block text-xl font-semibold text-blue-600">
@@ -95,7 +92,15 @@ const Setting = ({ setOpen }) => {
           mobOpen ? "hidden" : ""
         } flex-1 p-8 overflow-y-auto bg-white shadow-inner`}
       >
-        {activeTab === "profile" && <ProfileSettings />}
+        <button
+          className="-translate-y-5 flex gap-2 items-center  pl-1 pr-2 py-1 text-gray-500 rounded-full bg -gray-100"
+          onClick={() => {
+            window.history.back();
+          }}
+        >
+          <ArrowLeft size={20} /> Back
+        </button>
+        {activeTab === "profile" && <ProfileSettings user={user} />}
         {activeTab === "account" && <AccountSettings />}
         {activeTab === "notifications" && <NotificationSettings />}
         {activeTab === "appearance" && <AppearanceSettings />}
@@ -130,15 +135,36 @@ function SettingsTab({ icon, label, active, onClick }) {
 /* --------------------------------
    Individual Tab Components
 -------------------------------- */
-function ProfileSettings() {
+function ProfileSettings({ user }) {
   return (
     <section>
       <h2 className="text-2xl font-semibold mb-4">Profile Settings</h2>
       <div className="grid grid-cols-1 gap-4">
-        <InputField label="Full Name" placeholder="John Doe" />
-        <InputField label="Email" placeholder="john@imail.in" />
-        <InputField label="Phone Number" placeholder="+91 9876543210" />
-        <InputField label="Location" placeholder="Kolkata, India" />
+        <InputField
+          label="Full Name"
+          name={"fullname"}
+          placeholder="John Doe"
+          value={user.fullname}
+        />
+        <InputField
+          label={"Nick Name"}
+          name="nickname"
+          placeholder="nickname"
+          value={user?.nickname}
+        />
+        <InputField
+          name="phone"
+          label="Phone Number"
+          type="tel"
+          placeholder="+91 12345 67890"
+          value={user.phone}
+        />
+        <InputField
+          name="location"
+          label="Location"
+          placeholder="Kolkata, India"
+          value={user.location}
+        />
       </div>
       <SaveButton />
     </section>
@@ -150,7 +176,7 @@ function AccountSettings() {
     <section>
       <h2 className="text-2xl font-semibold mb-4">Account Settings</h2>
       <div className="space-y-4">
-        <InputField label="Username" placeholder="john_doe" />
+        {/* <InputField label="Username" placeholder="john_doe" /> */}
         <InputField label="Recovery Email" placeholder="backup@mail.com" />
         <InputField label="Language" placeholder="English (India)" />
       </div>
@@ -215,14 +241,18 @@ function SecuritySettings() {
 /* --------------------------------
    Reusable Components
 -------------------------------- */
-function InputField({ label, placeholder, type = "text" }) {
+function InputField({ label, placeholder, type = "text", value }) {
+  const [val, setVal] = useState(value);
   return (
     <div>
-      <label className="block text-sm font-medium text-gray-600 mb-1">
+      <label className="block text-sm font-medium text-gray-600 mb-1 capitalize">
         {label}
       </label>
       <input
         type={type}
+        name={label}
+        value={val}
+        onChange={(e) => setVal(e.target.value)}
         placeholder={placeholder}
         className="w-full border rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-blue-500"
       />
@@ -304,6 +334,7 @@ const HelpSupport = () => {
 };
 
 import { Shield } from "lucide-react";
+import { useSelector } from "react-redux";
 
 const PrivacyPolicy = () => {
   return (

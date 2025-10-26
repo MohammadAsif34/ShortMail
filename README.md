@@ -75,6 +75,8 @@ npm run dev
 
 # 📸 Preview
 
+***visit*** for preview: https://shortmail.vercel.app
+
 ![image](./public/preview.png)
 
 # 🤝 Contributing
@@ -85,7 +87,7 @@ For major changes, please open an issue first to discuss what you’d like to ch
 
 # 📄 License
 
-This project is licensed under the MIT [License](askdnskdn).
+This project is licensed under the MIT [License](./LICENSE).
 
 # 💬 Author
 

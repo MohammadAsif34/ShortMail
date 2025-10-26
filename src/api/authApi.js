@@ -1,13 +1,17 @@
 // src/api/authApi.js
 import apiClient from "./apiClient";
 
-export const loginUser = async (email, password) => {
-  const res = await apiClient.post("/auth/login", { email, password });
+export const loginUser = async (mail, password) => {
+  const res = await apiClient.post("/auth/login", { mail, password });
   return res.data; // { token, user: { id, name, email } }
 };
 
-export const registerUser = async (name, email, password) => {
-  const res = await apiClient.post("/auth/register", { name, email, password });
+export const registerUser = async (fullname, mail, password) => {
+  const res = await apiClient.post("/auth/register", {
+    fullname,
+    mail,
+    password,
+  });
   return res.data;
 };
 

@@ -1,7 +1,8 @@
-import { Forward, Printer, Reply } from "lucide-react";
 import React from "react";
+import { Forward, Printer, Reply } from "lucide-react";
+import { printMail } from "../../../utils/PrintMail";
 
-const MailFooter = () => {
+const MailFooter = ({ mail }) => {
   return (
     <>
       <footer className="flex items-center  justify-between px-6 py-8  ">
@@ -16,7 +17,10 @@ const MailFooter = () => {
           </button>
         </div>
 
-        <button className="flex items-center px-3 py-2 rounded-full border text-gray-600 border-gray-400 hover:bg-gray-200 transition">
+        <button
+          className="flex items-center px-3 py-2 rounded-full border text-gray-600 border-gray-400 hover:bg-gray-200 transition"
+          onClick={() => printMail(mail)}
+        >
           <Printer className="w-4 h-4 mr-2" />
           Print
         </button>
