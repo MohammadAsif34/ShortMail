@@ -1,17 +1,95 @@
-# React + Vite
+# 📬 ShortMail
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**ShortMail** is a simple email system built to simulate a basic mail experience within a single domain — `@shortmail.com`.  
+Users can send and receive emails within the same platform, manage their inbox, and update their profiles easily.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# 🚀 Features
 
-## React Compiler
+### ✉️ Mail System
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Send emails to users within the same domain (e.g., `example@shortmail.com`)
+- Organize mails by category:
+  - 📥 Inbox
+  - 📤 Sent
+  - ⭐ Starred
+  - 🗑️ Trash
+  - 🗂️ Archived
+  - 📝 Drafts
 
-## Expanding the ESLint configuration
+### 👤 Profile Management
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-"# z-mail" 
+- View and update profile information
+- Change name, password, and profile picture
+
+### 📝 Compose Mail
+
+- Create and send new mails
+- Supports message-only mode for now
+
+💡 _Upcoming Feature:_  
+In the next update, users will be able to attach files and photos while composing emails.
+
+---
+
+## 🛠️ Tech Stack
+
+**Frontend:** React.js, Redux Toolkit, TailwindCSS  
+**Backend:** Node.js, Express.js  
+**Database:** MongoDB  
+**Hosting:** Vercel (Frontend) + Render / Railway (Backend)
+
+---
+
+## ⚙️ Installation & Setup
+
+### Clone the repository
+
+```bash
+git clone https://github.com/your-username/shortmail.git
+cd shortmail
+```
+
+### Backend Setup
+
+```bash
+cd server
+npm install
+npm start
+```
+
+### Frontend Setup
+
+```bash
+cd client
+npm install
+npm run dev
+```
+
+### Now open your browser at
+
+```
+ http://localhost:5173
+```
+
+# 📸 Preview
+
+(Add screenshots or a short demo GIF here once available)
+
+# 🤝 Contributing
+
+### Pull requests are welcome!
+
+For major changes, please open an issue first to discuss what you’d like to change.
+
+# 📄 License
+
+This project is licensed under the MIT [License](askdnskdn).
+
+# 💬 Author
+
+### Mohammad Asif
+
+📧 mohammadasif34.dev@gmail.com  
+**Portfolio**: https://mohammadasifhasnain.vercel.app

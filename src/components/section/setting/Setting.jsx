@@ -12,17 +12,29 @@ import {
   X,
   HelpCircle,
   Info,
+  List,
+  InfoIcon,
 } from "lucide-react";
 
 const Setting = ({ setOpen }) => {
   const [activeTab, setActiveTab] = useState("profile");
+  const [mobOpen, setMobopen] = useState(false);
 
   return (
     <div className="flex h-full bg-gray-50 text-gray-800  overflow-hidden border border-gray-200 ">
       {/* Left Sidebar */}
-      <aside className="w-64 bg-white shadow-md border-r border-gray-300">
-        <div className="p-6 border-b border-gray-300">
-          <h2 className="text-xl font-semibold text-blue-600">Settings</h2>
+      <aside
+        className={` ${
+          mobOpen ? "w-64" : "w-15"
+        } w -14 md:w-64 bg-white shadow-md border-r border-gray-300`}
+      >
+        <div className="p-2  md:p-6 border-b border-gray-300">
+          <h2 className="hidden md:block text-xl font-semibold text-blue-600">
+            Settings
+          </h2>
+          <button className="md:hidden " onClick={() => setMobopen((p) => !p)}>
+            <List className="mx-2" />
+          </button>
         </div>
 
         <nav className="mt-4 space-y-1">
@@ -63,7 +75,7 @@ const Setting = ({ setOpen }) => {
             onClick={() => setActiveTab("helpsupport")}
           />
           <SettingsTab
-            icon={<Info className="w-5 h-5" />}
+            icon={<InfoIcon className="w-5 h-5" />}
             label="Privacy Policy"
             active={activeTab === "privacypolicy"}
             onClick={() => setActiveTab("privacypolicy")}
@@ -72,13 +84,17 @@ const Setting = ({ setOpen }) => {
       </aside>
 
       {/* Right Content Area */}
-      <button
+      {/* <button
         className="absolute right-3 top-3 cursor-pointer "
         onClick={() => setOpen((p) => !p)}
       >
         <X className="text-gray-300 hover:text-gray-500 transition-all duration-300 " />
-      </button>
-      <main className="flex-1 p-8 overflow-y-auto bg-white shadow-inner">
+      </button> */}
+      <main
+        className={` ${
+          mobOpen ? "hidden" : ""
+        } flex-1 p-8 overflow-y-auto bg-white shadow-inner`}
+      >
         {activeTab === "profile" && <ProfileSettings />}
         {activeTab === "account" && <AccountSettings />}
         {activeTab === "notifications" && <NotificationSettings />}
@@ -98,17 +114,15 @@ function SettingsTab({ icon, label, active, onClick }) {
   return (
     <button
       onClick={onClick}
-      className={`w-full flex items-center justify-between px-5 py-3 text-sm transition-all ease-linear duration-150 ${
+      className={`w-full flex items-center gap-x-6 px-5 py-3 text-sm transition-all ease-linear duration-150 ${
         active
           ? "bg-blue-100 text-blue-600 border-l-4 border-blue-600"
           : "hover:bg-gray-100 text-gray-700"
       }`}
     >
-      <span className="flex items-center space-x-3">
-        {icon}
-        <span>{label}</span>
-      </span>
-      <ChevronRight className="w-4 h-4 opacity-60" />
+      <span className="flex items-center space-x-2">{icon}</span>
+      <span className=" md:inline-block">{label}</span>
+      {/* <ChevronRight className="w-4 h-4 opacity-60" /> */}
     </button>
   );
 }
@@ -163,7 +177,7 @@ function AppearanceSettings() {
   return (
     <section>
       <h2 className="text-2xl font-semibold mb-4">Appearance</h2>
-      <div className="flex items-center space-x-6">
+      <div className="flex flex-col  md:flex-row items-center space-6 gap-6">
         <ThemeCard theme="Light" active />
         <ThemeCard theme="Dark" />
       </div>

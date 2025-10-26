@@ -1,0 +1,82 @@
+🔹 Step 1: Define Features for ShortMail
+
+Basic email clone features:
+
+1. Authentication
+    • Register
+    • Login
+    • Logout
+    • Protected profile
+
+2. Inbox
+    • Fetch received emails
+    • Mark as read/unread
+    • Delete email
+    • Compose / Send Mail
+    • Send email
+
+3. Save draft (optional)
+    • Add attachments (optional)
+    • Sent / Drafts / Trash
+    • View sent emails
+    • View drafts
+    • Move to trash
+    
+4. Optional Extras
+    • Search emails
+    • Star / important flag
+    • Folder management
+
+
+1️⃣ Auth Routes
++ ------ + -------------------- + ------------------------- + ---------------------------- +
+| Method | Endpoint             | Body / Query              | Description                  |
++ ------ + -------------------- + ------------------------- + ---------------------------- +
+| POST   | `/api/auth/register` | `{name, email, password}` | Register user                |
+| POST   | `/api/auth/login`    | `{email, password}`       | Login user                   |
+| GET    | `/api/auth/me`       | -                         | Get current user (protected) |
++ ------ + -------------------- + ------------------------- + ---------------------------- +
+
+2️⃣ Mail Routes
+| Method | Endpoint             | Body / Query                | Description                     |
+| ------ | -------------------- | --------------------------- | ------------------------------- |
+| POST   | `/api/mail/send`     | `{to, subject, text, html}` | Send an email                   |
+| GET    | `/api/mail/inbox`    | -                           | Get received emails (protected) |
+| GET    | `/api/mail/sent`     | -                           | Get sent emails (protected)     |
+| GET    | `/api/mail/:id`      | -                           | Get email by ID                 |
+| DELETE | `/api/mail/:id`      | -                           | Delete email                    |
+| PUT    | `/api/mail/:id/read` | -                           | Mark email as read              |
+| PUT    | `/api/mail/:id/star` | -                           | Mark email as starred           |
+
+3️⃣ Optional: Drafts
+| Method | Endpoint           | Body                        | Description    |
+| ------ | ------------------ | --------------------------- | -------------- |
+| POST   | `/api/mail/draft`  | `{to, subject, text, html}` | Save draft     |
+| GET    | `/api/mail/drafts` | -                           | Get all drafts |
+
+4️⃣ Middleware
+protect → protect routes
+authMiddleware → check JWT
+Optional: roleMiddleware → if you want admin/user roles
+
+user-model
+{
+  name: String,
+  email: String,
+  password: String, // hashed
+  createdAt: Date
+}
+
+mail-model
+{
+  from: ObjectId(User),
+  to: [String],
+  subject: String,
+  text: String,
+  html: String,
+  read: Boolean,
+  starred: Boolean,
+  createdAt: Date,
+  deleted: Boolean // for trash
+}
+

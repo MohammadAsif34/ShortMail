@@ -1,13 +1,13 @@
 import { Search } from "lucide-react";
 import React, { useState } from "react";
-import ProfileDropdown from "../header/ProfileDropdown";
+import ProfileDropdown from "../../header/ProfileDropdown";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
   return (
     <>
-      <header className="hidden min-md:flex px-4 py-2 bg-white border-b border-gray-300  items-center justify-between">
-        <div className="flex items-center space-x-3 w-full max-w-md bg-gray-100 rounded-full px-3 py-2">
+      <header className="hidden min-md:flex p py-2   items-center justify-between">
+        <div className="flex items-center space-x-3 w-full max-w-md bg-white rounded-full px-3 py-2">
           <Search className="w-5 h-5 text-gray-500" />
           <input
             type="text"

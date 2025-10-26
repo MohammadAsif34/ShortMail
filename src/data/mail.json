@@ -1,0 +1,1003 @@
+[
+  {
+    "id": "msg1",
+    "from": "alex@shortmail.com",
+    "to": "you@shortmail.com",
+    "subject": "Welcome to ShortMail!",
+    "text": "Hey there, welcome aboard 🎉",
+    "read": false,
+    "starred": false,
+    "createdAt": "2025-10-25T08:12:00Z"
+  },
+  {
+    "id": "msg2",
+    "from": "support@shortmail.com",
+    "to": "you@shortmail.com",
+    "subject": "Verify your ShortMail account",
+    "text": "Click the link to verify your account.",
+    "read": false,
+    "starred": false,
+    "createdAt": "2025-10-25T08:15:00Z"
+  },
+  {
+    "id": "msg3",
+    "from": "nina@shortmail.com",
+    "to": "you@shortmail.com",
+    "subject": "Let’s catch up",
+    "text": "Hey, are you free this weekend?",
+    "read": false,
+    "starred": false,
+    "createdAt": "2025-10-25T08:25:00Z"
+  },
+  {
+    "id": "msg4",
+    "from": "tech@shortmail.com",
+    "to": "you@shortmail.com",
+    "subject": "New feature released",
+    "text": "We’ve added Dark Mode 🌙!",
+    "read": true,
+    "starred": false,
+    "createdAt": "2025-10-25T08:30:00Z"
+  },
+  {
+    "id": "msg5",
+    "from": "sales@shopx.com",
+    "to": "you@shortmail.com",
+    "subject": "Exclusive Offer: 50% Off",
+    "text": "Limited time offer on gadgets.",
+    "read": false,
+    "starred": false,
+    "createdAt": "2025-10-25T09:10:00Z"
+  },
+  {
+    "id": "msg6",
+    "from": "admin@shortmail.com",
+    "to": "you@shortmail.com",
+    "subject": "System Update",
+    "text": "Scheduled maintenance at 2AM.",
+    "read": true,
+    "starred": false,
+    "createdAt": "2025-10-25T09:15:00Z"
+  },
+  {
+    "id": "msg7",
+    "from": "emma@designhub.com",
+    "to": "you@shortmail.com",
+    "subject": "Design Review",
+    "text": "Please check the attached design.",
+    "read": false,
+    "starred": true,
+    "createdAt": "2025-10-25T09:30:00Z"
+  },
+  {
+    "id": "msg8",
+    "from": "mark@shortmail.com",
+    "to": "you@shortmail.com",
+    "subject": "Team Sync",
+    "text": "Meeting at 10AM tomorrow.",
+    "read": true,
+    "starred": false,
+    "createdAt": "2025-10-25T09:45:00Z"
+  },
+  {
+    "id": "msg9",
+    "from": "no-reply@shortmail.com",
+    "to": "you@shortmail.com",
+    "subject": "Security Notice",
+    "text": "Someone tried to log in from another device.",
+    "read": false,
+    "starred": false,
+    "createdAt": "2025-10-25T09:50:00Z"
+  },
+  {
+    "id": "msg10",
+    "from": "hr@companyx.com",
+    "to": "you@shortmail.com",
+    "subject": "Interview Update",
+    "text": "Your interview is scheduled for Monday.",
+    "read": false,
+    "starred": true,
+    "createdAt": "2025-10-25T10:00:00Z"
+  },
+  {
+    "id": "msg11",
+    "from": "alice@shortmail.com",
+    "to": "you@shortmail.com",
+    "subject": "Morning Update",
+    "text": "Project status attached.",
+    "read": true,
+    "starred": false,
+    "createdAt": "2025-10-25T10:05:00Z"
+  },
+  {
+    "id": "msg12",
+    "from": "notifications@app.io",
+    "to": "you@shortmail.com",
+    "subject": "Weekly Summary",
+    "text": "You completed 12 tasks this week.",
+    "read": true,
+    "starred": false,
+    "createdAt": "2025-10-25T10:20:00Z"
+  },
+  {
+    "id": "msg13",
+    "from": "john@freelancehub.com",
+    "to": "you@shortmail.com",
+    "subject": "New project available",
+    "text": "A new web dev gig matches your skills.",
+    "read": false,
+    "starred": true,
+    "createdAt": "2025-10-25T10:45:00Z"
+  },
+  {
+    "id": "msg14",
+    "from": "info@conference.com",
+    "to": "you@shortmail.com",
+    "subject": "Tech Conference Invitation",
+    "text": "Join us for DevFest 2025!",
+    "read": false,
+    "starred": false,
+    "createdAt": "2025-10-25T11:00:00Z"
+  },
+  {
+    "id": "msg15",
+    "from": "mail@banksecure.com",
+    "to": "you@shortmail.com",
+    "subject": "Account Alert",
+    "text": "Your account balance is low.",
+    "read": false,
+    "starred": false,
+    "createdAt": "2025-10-25T11:15:00Z"
+  },
+  {
+    "id": "msg16",
+    "from": "newsletter@shortmail.com",
+    "to": "you@shortmail.com",
+    "subject": "ShortMail Tips",
+    "text": "Top shortcuts you should know.",
+    "read": false,
+    "starred": false,
+    "createdAt": "2025-10-25T11:20:00Z"
+  },
+  {
+    "id": "msg17",
+    "from": "admin@shortmail.com",
+    "to": "you@shortmail.com",
+    "subject": "Policy Update",
+    "text": "Our privacy policy has been updated.",
+    "read": false,
+    "starred": false,
+    "createdAt": "2025-10-25T11:25:00Z"
+  },
+  {
+    "id": "msg18",
+    "from": "lucas@shortmail.com",
+    "to": "you@shortmail.com",
+    "subject": "Code Review",
+    "text": "Please check the latest PR.",
+    "read": false,
+    "starred": false,
+    "createdAt": "2025-10-25T11:30:00Z"
+  },
+  {
+    "id": "msg19",
+    "from": "billing@services.com",
+    "to": "you@shortmail.com",
+    "subject": "Payment Received",
+    "text": "We’ve received your payment of ₹499.",
+    "read": true,
+    "starred": false,
+    "createdAt": "2025-10-25T11:45:00Z"
+  },
+  {
+    "id": "msg20",
+    "from": "rachel@shortmail.com",
+    "to": "you@shortmail.com",
+    "subject": "Weekend Plan",
+    "text": "Let’s go hiking this Sunday!",
+    "read": false,
+    "starred": true,
+    "createdAt": "2025-10-25T11:55:00Z"
+  },
+  {
+    "id": "msg21",
+    "from": "support@techfix.com",
+    "to": "you@shortmail.com",
+    "subject": "Ticket Update",
+    "text": "Your issue has been resolved.",
+    "read": true,
+    "starred": false,
+    "createdAt": "2025-10-25T12:00:00Z"
+  },
+  {
+    "id": "msg22",
+    "from": "newsletter@dailybyte.com",
+    "to": "you@shortmail.com",
+    "subject": "Today’s Tech News",
+    "text": "AI revolutionizing communication.",
+    "read": false,
+    "starred": false,
+    "createdAt": "2025-10-25T12:10:00Z"
+  },
+  {
+    "id": "msg23",
+    "from": "feedback@shortmail.com",
+    "to": "you@shortmail.com",
+    "subject": "We value your feedback",
+    "text": "Tell us how we can improve.",
+    "read": false,
+    "starred": false,
+    "createdAt": "2025-10-25T12:20:00Z"
+  },
+  {
+    "id": "msg24",
+    "from": "service@netbank.com",
+    "to": "you@shortmail.com",
+    "subject": "Transaction Alert",
+    "text": "₹2000 credited to your account.",
+    "read": true,
+    "starred": false,
+    "createdAt": "2025-10-25T12:25:00Z"
+  },
+  {
+    "id": "msg25",
+    "from": "manager@shortmail.com",
+    "to": "you@shortmail.com",
+    "subject": "Monthly Report",
+    "text": "Please review and approve.",
+    "read": false,
+    "starred": true,
+    "createdAt": "2025-10-25T12:30:00Z"
+  },
+  {
+    "id": "msg26",
+    "from": "devteam@shortmail.com",
+    "to": "you@shortmail.com",
+    "subject": "API Endpoint Update",
+    "text": "We’ve updated our API endpoints for better performance.",
+    "read": false,
+    "starred": false,
+    "createdAt": "2025-10-25T12:40:00Z"
+  },
+  {
+    "id": "msg27",
+    "from": "jobs@careerhub.com",
+    "to": "you@shortmail.com",
+    "subject": "Job Opportunity: React Developer",
+    "text": "We found a job that matches your skills.",
+    "read": false,
+    "starred": true,
+    "createdAt": "2025-10-25T12:45:00Z"
+  },
+  {
+    "id": "msg28",
+    "from": "newsletter@techinsider.com",
+    "to": "you@shortmail.com",
+    "subject": "Top 10 Startups of 2025",
+    "text": "See which startups are booming this year.",
+    "read": true,
+    "starred": false,
+    "createdAt": "2025-10-25T12:50:00Z"
+  },
+  {
+    "id": "msg29",
+    "from": "anna@shortmail.com",
+    "to": "you@shortmail.com",
+    "subject": "Meeting Notes",
+    "text": "Attaching notes from yesterday’s call.",
+    "read": false,
+    "starred": false,
+    "createdAt": "2025-10-25T13:00:00Z"
+  },
+  {
+    "id": "msg30",
+    "from": "ads@dealzone.com",
+    "to": "you@shortmail.com",
+    "subject": "Biggest Sale of the Year!",
+    "text": "Get 70% off on your favorite products.",
+    "read": false,
+    "starred": false,
+    "createdAt": "2025-10-25T13:05:00Z"
+  },
+  {
+    "id": "msg31",
+    "from": "support@shortmail.com",
+    "to": "you@shortmail.com",
+    "subject": "Your password was changed",
+    "text": "If you didn’t change your password, contact us immediately.",
+    "read": true,
+    "starred": false,
+    "createdAt": "2025-10-25T13:10:00Z"
+  },
+  {
+    "id": "msg32",
+    "from": "noreply@survey.com",
+    "to": "you@shortmail.com",
+    "subject": "Take our short survey",
+    "text": "We’d love to hear your thoughts about ShortMail.",
+    "read": false,
+    "starred": false,
+    "createdAt": "2025-10-25T13:20:00Z"
+  },
+  {
+    "id": "msg33",
+    "from": "dev@opensourcehub.com",
+    "to": "you@shortmail.com",
+    "subject": "Contribute to open-source",
+    "text": "Join the next contribution event on GitHub.",
+    "read": false,
+    "starred": true,
+    "createdAt": "2025-10-25T13:25:00Z"
+  },
+  {
+    "id": "msg34",
+    "from": "alerts@financeapp.com",
+    "to": "you@shortmail.com",
+    "subject": "Investment Update",
+    "text": "Your mutual fund value increased by 4%.",
+    "read": true,
+    "starred": false,
+    "createdAt": "2025-10-25T13:35:00Z"
+  },
+  {
+    "id": "msg35",
+    "from": "recruiter@hireme.com",
+    "to": "you@shortmail.com",
+    "subject": "Interview Invitation",
+    "text": "We’d like to schedule an interview with you.",
+    "read": false,
+    "starred": true,
+    "createdAt": "2025-10-25T13:45:00Z"
+  },
+  {
+    "id": "msg36",
+    "from": "no-reply@shortmail.com",
+    "to": "you@shortmail.com",
+    "subject": "2-Step Verification Code",
+    "text": "Your verification code is 472891.",
+    "read": true,
+    "starred": false,
+    "createdAt": "2025-10-25T13:50:00Z"
+  },
+  {
+    "id": "msg37",
+    "from": "events@community.org",
+    "to": "you@shortmail.com",
+    "subject": "Local Meetup Reminder",
+    "text": "Join us for the monthly tech meetup.",
+    "read": false,
+    "starred": false,
+    "createdAt": "2025-10-25T14:00:00Z"
+  },
+  {
+    "id": "msg38",
+    "from": "info@aiweekly.com",
+    "to": "you@shortmail.com",
+    "subject": "AI in 2025: What’s next?",
+    "text": "Explore the trends shaping the AI industry.",
+    "read": false,
+    "starred": false,
+    "createdAt": "2025-10-25T14:10:00Z"
+  },
+  {
+    "id": "msg39",
+    "from": "devops@shortmail.com",
+    "to": "you@shortmail.com",
+    "subject": "Server Health Report",
+    "text": "All systems running smoothly.",
+    "read": true,
+    "starred": false,
+    "createdAt": "2025-10-25T14:20:00Z"
+  },
+  {
+    "id": "msg40",
+    "from": "rachel@creativehub.com",
+    "to": "you@shortmail.com",
+    "subject": "Logo Design Draft",
+    "text": "Here’s the new logo concept for ShortMail.",
+    "read": false,
+    "starred": true,
+    "createdAt": "2025-10-25T14:25:00Z"
+  },
+  {
+    "id": "msg41",
+    "from": "alerts@shortmail.com",
+    "to": "you@shortmail.com",
+    "subject": "New Login Detected",
+    "text": "A new device logged into your account.",
+    "read": true,
+    "starred": false,
+    "createdAt": "2025-10-25T14:35:00Z"
+  },
+  {
+    "id": "msg42",
+    "from": "dev@shortmail.com",
+    "to": "you@shortmail.com",
+    "subject": "Bug Report Confirmation",
+    "text": "Thanks for submitting a bug report.",
+    "read": false,
+    "starred": false,
+    "createdAt": "2025-10-25T14:40:00Z"
+  },
+  {
+    "id": "msg43",
+    "from": "info@cloudstore.com",
+    "to": "you@shortmail.com",
+    "subject": "Storage Almost Full",
+    "text": "You’re using 90% of your cloud storage.",
+    "read": false,
+    "starred": false,
+    "createdAt": "2025-10-25T14:45:00Z"
+  },
+  {
+    "id": "msg44",
+    "from": "newsletter@remotework.com",
+    "to": "you@shortmail.com",
+    "subject": "Best remote jobs of 2025",
+    "text": "Top companies hiring remote devs.",
+    "read": true,
+    "starred": false,
+    "createdAt": "2025-10-25T14:50:00Z"
+  },
+  {
+    "id": "msg45",
+    "from": "olivia@shortmail.com",
+    "to": "you@shortmail.com",
+    "subject": "UI Feedback",
+    "text": "I made some tweaks to the sidebar layout.",
+    "read": false,
+    "starred": true,
+    "createdAt": "2025-10-25T14:55:00Z"
+  },
+  {
+    "id": "msg46",
+    "from": "team@producthunt.com",
+    "to": "you@shortmail.com",
+    "subject": "Your product is trending!",
+    "text": "Congrats! Your project gained 150 upvotes.",
+    "read": false,
+    "starred": true,
+    "createdAt": "2025-10-25T15:00:00Z"
+  },
+  {
+    "id": "msg47",
+    "from": "info@musicverse.com",
+    "to": "you@shortmail.com",
+    "subject": "Concert Tickets On Sale",
+    "text": "Get 20% off early bird tickets.",
+    "read": true,
+    "starred": false,
+    "createdAt": "2025-10-25T15:10:00Z"
+  },
+  {
+    "id": "msg48",
+    "from": "security@shortmail.com",
+    "to": "you@shortmail.com",
+    "subject": "Suspicious Activity Detected",
+    "text": "We noticed a new login attempt from Delhi, India.",
+    "read": false,
+    "starred": true,
+    "createdAt": "2025-10-25T15:15:00Z"
+  },
+  {
+    "id": "msg49",
+    "from": "team@learncode.com",
+    "to": "you@shortmail.com",
+    "subject": "New Course Available",
+    "text": "Master MERN Stack Development in 30 days!",
+    "read": true,
+    "starred": false,
+    "createdAt": "2025-10-25T15:20:00Z"
+  },
+  {
+    "id": "msg50",
+    "from": "offers@flightnow.com",
+    "to": "you@shortmail.com",
+    "subject": "Discount on Flights ✈️",
+    "text": "Grab 30% off on international bookings.",
+    "read": false,
+    "starred": false,
+    "createdAt": "2025-10-25T15:25:00Z"
+  },
+
+  {
+    "id": "msg51",
+    "from": "no-reply@newsletter.ai",
+    "to": "you@shortmail.com",
+    "subject": "Weekly AI Digest",
+    "text": "Catch up on the latest AI news and research.",
+    "read": false,
+    "starred": false,
+    "createdAt": "2025-10-25T15:30:00Z"
+  },
+  {
+    "id": "msg52",
+    "from": "rewards@shopsmart.com",
+    "to": "you@shortmail.com",
+    "subject": "You earned 500 reward points!",
+    "text": "Redeem your points for exciting offers.",
+    "read": true,
+    "starred": false,
+    "createdAt": "2025-10-25T15:35:00Z"
+  },
+  {
+    "id": "msg53",
+    "from": "alex@shortmail.com",
+    "to": "you@shortmail.com",
+    "subject": "New Feature Idea",
+    "text": "What if we add voice search in ShortMail?",
+    "read": false,
+    "starred": true,
+    "createdAt": "2025-10-25T15:40:00Z"
+  },
+  {
+    "id": "msg54",
+    "from": "noreply@eventhub.com",
+    "to": "you@shortmail.com",
+    "subject": "Event Confirmation",
+    "text": "You are registered for DevCon 2025.",
+    "read": true,
+    "starred": false,
+    "createdAt": "2025-10-25T15:45:00Z"
+  },
+  {
+    "id": "msg55",
+    "from": "info@weatherzone.com",
+    "to": "you@shortmail.com",
+    "subject": "Weekend Weather Update",
+    "text": "Expect mild temperatures and clear skies.",
+    "read": false,
+    "starred": false,
+    "createdAt": "2025-10-25T15:50:00Z"
+  },
+  {
+    "id": "msg56",
+    "from": "recruitment@tata.com",
+    "to": "you@shortmail.com",
+    "subject": "Application Received",
+    "text": "Your application for internship has been received.",
+    "read": true,
+    "starred": true,
+    "createdAt": "2025-10-25T15:55:00Z"
+  },
+  {
+    "id": "msg57",
+    "from": "billing@cloudstorage.com",
+    "to": "you@shortmail.com",
+    "subject": "Your monthly invoice is ready",
+    "text": "Download your invoice for October.",
+    "read": false,
+    "starred": false,
+    "createdAt": "2025-10-25T16:00:00Z"
+  },
+  {
+    "id": "msg58",
+    "from": "support@devhub.io",
+    "to": "you@shortmail.com",
+    "subject": "Account Verification Required",
+    "text": "Please verify your email to activate your account.",
+    "read": false,
+    "starred": false,
+    "createdAt": "2025-10-25T16:05:00Z"
+  },
+  {
+    "id": "msg59",
+    "from": "jobs@google.com",
+    "to": "you@shortmail.com",
+    "subject": "New Role: Software Engineer Intern",
+    "text": "Apply for the Software Engineer Internship at Google.",
+    "read": true,
+    "starred": true,
+    "createdAt": "2025-10-25T16:10:00Z"
+  },
+  {
+    "id": "msg60",
+    "from": "no-reply@linkedin.com",
+    "to": "you@shortmail.com",
+    "subject": "Someone viewed your profile",
+    "text": "Your profile was viewed by 5 recruiters this week.",
+    "read": true,
+    "starred": false,
+    "createdAt": "2025-10-25T16:15:00Z"
+  },
+  {
+    "id": "msg61",
+    "from": "newsletter@productivitypro.com",
+    "to": "you@shortmail.com",
+    "subject": "Boost Your Workflow",
+    "text": "Top tools to stay productive in 2025.",
+    "read": false,
+    "starred": false,
+    "createdAt": "2025-10-25T16:20:00Z"
+  },
+  {
+    "id": "msg62",
+    "from": "team@codecamp.com",
+    "to": "you@shortmail.com",
+    "subject": "Coding Bootcamp Starts Tomorrow",
+    "text": "Get ready for your full-stack developer bootcamp!",
+    "read": false,
+    "starred": false,
+    "createdAt": "2025-10-25T16:25:00Z"
+  },
+  {
+    "id": "msg63",
+    "from": "security@paypal.com",
+    "to": "you@shortmail.com",
+    "subject": "Unusual Login Attempt",
+    "text": "We blocked a login attempt from a new device.",
+    "read": true,
+    "starred": true,
+    "createdAt": "2025-10-25T16:30:00Z"
+  },
+  {
+    "id": "msg64",
+    "from": "updates@shortmail.com",
+    "to": "you@shortmail.com",
+    "subject": "Introducing ShortMail Mobile",
+    "text": "Now access your inbox from anywhere with our new app!",
+    "read": false,
+    "starred": true,
+    "createdAt": "2025-10-25T16:35:00Z"
+  },
+  {
+    "id": "msg65",
+    "from": "noreply@spotify.com",
+    "to": "you@shortmail.com",
+    "subject": "Your Weekly Playlist is Here",
+    "text": "Enjoy personalized music selected for your mood.",
+    "read": true,
+    "starred": false,
+    "createdAt": "2025-10-25T16:40:00Z"
+  },
+  {
+    "id": "msg66",
+    "from": "info@flightbooker.com",
+    "to": "you@shortmail.com",
+    "subject": "Your flight itinerary",
+    "text": "Your booking confirmation is attached below.",
+    "read": false,
+    "starred": false,
+    "createdAt": "2025-10-25T16:45:00Z"
+  },
+  {
+    "id": "msg67",
+    "from": "sales@laptopstore.com",
+    "to": "you@shortmail.com",
+    "subject": "Exclusive Diwali Offer",
+    "text": "Flat ₹10,000 off on premium laptops.",
+    "read": false,
+    "starred": false,
+    "createdAt": "2025-10-25T16:50:00Z"
+  },
+  {
+    "id": "msg68",
+    "from": "recruiter@infosys.com",
+    "to": "you@shortmail.com",
+    "subject": "Interview Round 2 Schedule",
+    "text": "Please confirm your availability for the next round.",
+    "read": true,
+    "starred": true,
+    "createdAt": "2025-10-25T16:55:00Z"
+  },
+  {
+    "id": "msg69",
+    "from": "dev@shortmail.com",
+    "to": "you@shortmail.com",
+    "subject": "Performance Metrics",
+    "text": "Here’s the latest app performance summary.",
+    "read": true,
+    "starred": false,
+    "createdAt": "2025-10-25T17:00:00Z"
+  },
+  {
+    "id": "msg70",
+    "from": "alerts@banksecure.com",
+    "to": "you@shortmail.com",
+    "subject": "Low Balance Alert",
+    "text": "Your account balance is below minimum required limit.",
+    "read": false,
+    "starred": false,
+    "createdAt": "2025-10-25T17:05:00Z"
+  },
+  {
+    "id": "msg71",
+    "from": "info@coursera.org",
+    "to": "you@shortmail.com",
+    "subject": "New Course: AI for Everyone",
+    "text": "Enroll now and start learning today.",
+    "read": true,
+    "starred": false,
+    "createdAt": "2025-10-25T17:10:00Z"
+  },
+  {
+    "id": "msg72",
+    "from": "newsletter@designhub.com",
+    "to": "you@shortmail.com",
+    "subject": "UI Trends 2025",
+    "text": "Check out the latest design inspiration.",
+    "read": false,
+    "starred": false,
+    "createdAt": "2025-10-25T17:15:00Z"
+  },
+  {
+    "id": "msg73",
+    "from": "no-reply@shortmail.com",
+    "to": "you@shortmail.com",
+    "subject": "Backup Completed",
+    "text": "Your email backup finished successfully.",
+    "read": true,
+    "starred": false,
+    "createdAt": "2025-10-25T17:20:00Z"
+  },
+  {
+    "id": "msg74",
+    "from": "careers@amazon.com",
+    "to": "you@shortmail.com",
+    "subject": "Application Status Update",
+    "text": "Your application is under review.",
+    "read": true,
+    "starred": true,
+    "createdAt": "2025-10-25T17:25:00Z"
+  },
+  {
+    "id": "msg75",
+    "from": "newsletter@cryptoinsight.com",
+    "to": "you@shortmail.com",
+    "subject": "Bitcoin Reaches New High",
+    "text": "BTC crosses $80,000 — see what’s next for crypto.",
+    "read": false,
+    "starred": false,
+    "createdAt": "2025-10-25T17:30:00Z"
+  },
+  {
+    "id": "msg76",
+    "from": "hello@startupdaily.com",
+    "to": "you@shortmail.com",
+    "subject": "Top 10 Indian Startups 2025",
+    "text": "Discover which startups are shaping the future.",
+    "read": true,
+    "starred": false,
+    "createdAt": "2025-10-25T17:35:00Z"
+  },
+  {
+    "id": "msg77",
+    "from": "no-reply@instagram.com",
+    "to": "you@shortmail.com",
+    "subject": "New Login from Chrome on Windows",
+    "text": "We noticed a login from an unknown device.",
+    "read": false,
+    "starred": false,
+    "createdAt": "2025-10-25T17:40:00Z"
+  },
+  {
+    "id": "msg78",
+    "from": "support@shortmail.com",
+    "to": "you@shortmail.com",
+    "subject": "We value your feedback",
+    "text": "Tell us how we can improve your ShortMail experience.",
+    "read": false,
+    "starred": true,
+    "createdAt": "2025-10-25T17:45:00Z"
+  },
+  {
+    "id": "msg79",
+    "from": "newsletter@techradar.com",
+    "to": "you@shortmail.com",
+    "subject": "Gadget Trends 2025",
+    "text": "New AI-powered wearables are taking over the market.",
+    "read": true,
+    "starred": false,
+    "createdAt": "2025-10-25T17:50:00Z"
+  },
+  {
+    "id": "msg80",
+    "from": "billing@netflix.com",
+    "to": "you@shortmail.com",
+    "subject": "Payment Successful",
+    "text": "Your Netflix subscription has been renewed.",
+    "read": true,
+    "starred": false,
+    "createdAt": "2025-10-25T17:55:00Z"
+  },
+  {
+    "id": "msg81",
+    "from": "careers@byjus.com",
+    "to": "you@shortmail.com",
+    "subject": "Interview Invitation",
+    "text": "Please select your preferred slot for the technical round.",
+    "read": false,
+    "starred": true,
+    "createdAt": "2025-10-25T18:00:00Z"
+  },
+  {
+    "id": "msg82",
+    "from": "alerts@github.com",
+    "to": "you@shortmail.com",
+    "subject": "Security Alert: New SSH Key Added",
+    "text": "A new key was added to your GitHub account.",
+    "read": true,
+    "starred": false,
+    "createdAt": "2025-10-25T18:05:00Z"
+  },
+  {
+    "id": "msg83",
+    "from": "community@hashnode.com",
+    "to": "you@shortmail.com",
+    "subject": "Top Dev Articles This Week",
+    "text": "Check out what developers are talking about.",
+    "read": false,
+    "starred": false,
+    "createdAt": "2025-10-25T18:10:00Z"
+  },
+  {
+    "id": "msg84",
+    "from": "team@openai.com",
+    "to": "you@shortmail.com",
+    "subject": "New ChatGPT Updates",
+    "text": "Introducing GPT-5 — smarter, faster, more capable.",
+    "read": true,
+    "starred": true,
+    "createdAt": "2025-10-25T18:15:00Z"
+  },
+  {
+    "id": "msg85",
+    "from": "hello@airbnb.com",
+    "to": "you@shortmail.com",
+    "subject": "Your trip is confirmed",
+    "text": "Enjoy your stay in Goa from Nov 10–15.",
+    "read": false,
+    "starred": false,
+    "createdAt": "2025-10-25T18:20:00Z"
+  },
+  {
+    "id": "msg86",
+    "from": "info@udemy.com",
+    "to": "you@shortmail.com",
+    "subject": "Python Course 90% Off",
+    "text": "Upgrade your skills today — offer valid till tonight!",
+    "read": true,
+    "starred": false,
+    "createdAt": "2025-10-25T18:25:00Z"
+  },
+  {
+    "id": "msg87",
+    "from": "alerts@flipkart.com",
+    "to": "you@shortmail.com",
+    "subject": "Your Order Has Shipped",
+    "text": "Your Diwali package is on its way!",
+    "read": false,
+    "starred": false,
+    "createdAt": "2025-10-25T18:30:00Z"
+  },
+  {
+    "id": "msg88",
+    "from": "noreply@zomato.com",
+    "to": "you@shortmail.com",
+    "subject": "Enjoy 50% Off on Your Next Meal",
+    "text": "Grab delicious meals at half price today.",
+    "read": false,
+    "starred": false,
+    "createdAt": "2025-10-25T18:35:00Z"
+  },
+  {
+    "id": "msg89",
+    "from": "info@healthtrack.com",
+    "to": "you@shortmail.com",
+    "subject": "Stay Fit This Festive Season",
+    "text": "5 easy tips to keep your health in check.",
+    "read": true,
+    "starred": false,
+    "createdAt": "2025-10-25T18:40:00Z"
+  },
+  {
+    "id": "msg90",
+    "from": "jobs@accenture.com",
+    "to": "you@shortmail.com",
+    "subject": "Interview Feedback",
+    "text": "Thank you for interviewing — we’ll get back soon.",
+    "read": true,
+    "starred": true,
+    "createdAt": "2025-10-25T18:45:00Z"
+  },
+  {
+    "id": "msg91",
+    "from": "updates@chrome.com",
+    "to": "you@shortmail.com",
+    "subject": "Chrome 130 Released",
+    "text": "Faster performance and better privacy controls.",
+    "read": true,
+    "starred": false,
+    "createdAt": "2025-10-25T18:50:00Z"
+  },
+  {
+    "id": "msg92",
+    "from": "sales@amazon.in",
+    "to": "you@shortmail.com",
+    "subject": "Big Billion Days Sale!",
+    "text": "Exclusive early access deals just for you.",
+    "read": false,
+    "starred": false,
+    "createdAt": "2025-10-25T18:55:00Z"
+  },
+  {
+    "id": "msg93",
+    "from": "contact@open-source.org",
+    "to": "you@shortmail.com",
+    "subject": "Join the Open Source Summit",
+    "text": "Collaborate with global developers at OSS 2025.",
+    "read": false,
+    "starred": true,
+    "createdAt": "2025-10-25T19:00:00Z"
+  },
+  {
+    "id": "msg94",
+    "from": "rewards@swiggy.com",
+    "to": "you@shortmail.com",
+    "subject": "Free Delivery Voucher",
+    "text": "Enjoy free delivery on your next 3 orders.",
+    "read": false,
+    "starred": false,
+    "createdAt": "2025-10-25T19:05:00Z"
+  },
+  {
+    "id": "msg95",
+    "from": "noreply@medium.com",
+    "to": "you@shortmail.com",
+    "subject": "Your Weekly Reading List",
+    "text": "Top 5 stories personalized for you.",
+    "read": true,
+    "starred": false,
+    "createdAt": "2025-10-25T19:10:00Z"
+  },
+  {
+    "id": "msg96",
+    "from": "newsletter@tesla.com",
+    "to": "you@shortmail.com",
+    "subject": "New Model Y Launched",
+    "text": "Check out the upgraded range and design.",
+    "read": false,
+    "starred": true,
+    "createdAt": "2025-10-25T19:15:00Z"
+  },
+  {
+    "id": "msg97",
+    "from": "security@apple.com",
+    "to": "you@shortmail.com",
+    "subject": "New Sign-In on iPhone 16",
+    "text": "Was this you? If not, secure your account now.",
+    "read": false,
+    "starred": true,
+    "createdAt": "2025-10-25T19:20:00Z"
+  },
+  {
+    "id": "msg98",
+    "from": "updates@microsoft.com",
+    "to": "you@shortmail.com",
+    "subject": "Windows 12 Insider Preview",
+    "text": "Be among the first to try the new features.",
+    "read": true,
+    "starred": false,
+    "createdAt": "2025-10-25T19:25:00Z"
+  },
+  {
+    "id": "msg99",
+    "from": "newsletter@financehub.com",
+    "to": "you@shortmail.com",
+    "subject": "Stock Market Highlights",
+    "text": "Nifty hits record highs amid festive rally.",
+    "read": true,
+    "starred": false,
+    "createdAt": "2025-10-25T19:30:00Z"
+  },
+  {
+    "id": "msg100",
+    "from": "team@shortmail.com",
+    "to": "you@shortmail.com",
+    "subject": "Thank You for Joining ShortMail!",
+    "text": "We’re thrilled to have you. Enjoy fast, simple emailing.",
+    "read": false,
+    "starred": true,
+    "createdAt": "2025-10-25T19:35:00Z"
+  }
+]

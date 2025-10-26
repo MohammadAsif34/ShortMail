@@ -11,28 +11,29 @@ import {
   Search,
   Plus,
 } from "lucide-react";
-import Sidebar from "./components/dashboard/Sidebar";
-import Header from "./components/dashboard/Header";
-import MailList from "./components/dashboard/MailList";
-import MailMessage from "./components/dashboard/MailMessage";
-import Setting from "./components/setting/Setting";
+// import Sidebar from "./components/dashboard/Sidebar";
+// import Header from "./components/dashboard/Header";
+// import MailList from "./components/dashboard/MailList";
+// import MailMessage from "./components/section/mail/MailMessage";
+// import Setting from "./components/section/setting/Setting";
+// import Sidebar from "./components/section/sidebar/Sidebar";
 
 export default function Dashboard() {
   return (
     <div className="flex h-screen bg-gray-50 text-gray-800">
       {/* Sidebar */}
-      <Sidebar />
+      {/* <Sidebar /> */}
 
       {/* Main Section */}
       <main className="flex-1 flex flex-col">
         {/* Top Bar */}
-        <Header />
+        {/* <Header /> */}
 
         {/* Email List */}
         <section className="flex-1 gr id grid-cols-3 border-t=">
           {/* Mail List */}
           <div className="h-[calc(89vh)] overflow-y-auto custom-scroll">
-            <MailList />
+            {/* <MailList /> */}
             {/* <Setting /> */}
             {/* <MailMessage /> */}
           </div>

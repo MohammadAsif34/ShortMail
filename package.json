@@ -1,5 +1,5 @@
 {
-  "name": "z-mail.com",
+  "name": "shortmail",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,12 +10,17 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.9.2",
     "@tailwindcss/vite": "^4.1.14",
+    "axios": "^1.12.2",
+    "framer-motion": "^12.23.24",
     "lucide-react": "^0.545.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "react-redux": "^9.2.0",
     "react-router-dom": "^7.9.4",
     "react-to-print": "^3.1.1",
+    "redux-persist": "^6.0.0",
     "tailwindcss": "^4.1.14"
   },
   "devDependencies": {

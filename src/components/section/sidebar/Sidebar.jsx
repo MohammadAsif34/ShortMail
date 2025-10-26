@@ -1,53 +1,70 @@
 import {
   Archive,
   Inbox,
+  List,
+  ListCollapse,
   LogOut,
   Mail,
   MailCheck,
   Menu,
   Notebook,
   Plus,
+  Search,
   Send,
   Settings,
   Star,
   Trash2,
   X,
 } from "lucide-react";
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import ProfileDropdown from "../header/ProfileDropdown";
+import React, { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import ProfileDropdown from "../../header/ProfileDropdown";
 
 const Sidebar = () => {
-  const [state, setState] = useState("Inbox");
+  const type = useLocation().pathname.split("/");
+  const [state, setState] = useState("");
   const [open, setOpen] = useState(false);
+  const [mobOpen, setMobopen] = useState(false);
   const [profileDropdown, setProfileDropdown] = useState(false);
+
+  useEffect(() => {
+    setState(type[1]);
+  }, []);
 
   return (
     <>
       {/* Top Navbar for Mobile */}
-      <div className="md:hidden min-w-[500px]  fixed top-0 left-0 right-0 z-40  shadow-md flex justify-between items-center  px-2 border py-3 border-b border-gray-200">
-        <button
-          onClick={() => setProfileDropdown(true)}
-          className="text-gray-700 hover:text-blue-600 transition"
-        >
-          <Menu className="w-6 h-6" />
-        </button>
-        <div className="w-full flex items-center justify-between space-x-2">
-          <div className="flex ml-12 items-center gap-2">
+      <div className="b md:hidden max-w-sm fixed top-0 left-0 right-0 z-40  shadow -md flex justify-between items-center  px-2  py-3 ">
+        <div className="flex-1 h-10  flex items-center justify-between space-x-2">
+          <button
+            onClick={() => setMobopen(true)}
+            className="p-1 rounded-md hover:bg-gray-200 "
+          >
+            <ListCollapse className="text-blue-500 w-6 h-6 " />
+          </button>
+          <div className="flex items-center space-x-3 w-full  bg-white rounded-full px-3 py-2">
+            <Search className="w-5 h-5 text-gray-500" />
+            <input
+              type="text"
+              placeholder="Search mail..."
+              className=" h-6 bg-transparent outline-none w-full text-sm text-gray-500"
+            />
+          </div>
+          {/* <div className="flex ml-12 items-center gap-2">
             <MailCheck className="text-blue-600 w-6 h-6" />
             <h1 className="text-lg font-semibold text-blue-600 font-mono">
-              z-mail.com
+              ShortMail
             </h1>
-          </div>
+          </div> */}
           <div className=" relative ">
             <button
-              className="flex items-center focus:outline-2 outline-blue-500 rounded-full"
+              className="w-10 h-10 flex items-center focus:outline-2 outline-blue-500 rounded-full"
               onClick={() => setProfileDropdown((p) => !p)}
             >
               <img
-                src="https://i.pravatar.cc/40?img=3"
+                src="https://i.pravatar.cc/40?img=2"
                 alt="user"
-                className="w-10 h-10 rounded-full"
+                className=" rounded-full"
               />
             </button>
             {profileDropdown && (
@@ -55,32 +72,35 @@ const Sidebar = () => {
             )}
           </div>
         </div>
-        <div className="w-6 h-6"></div>
+        {/* <div className="w-6 h-6"></div> */}
       </div>
 
       {/* Sidebar for desktop & mobile */}
       <aside
-        className={`fixed top-0 left-0 h-full bg-white shadow-md border-r border-gray-300 flex flex-col justify-between transform transition-transform duration-300 z-50 
+        className={` bg-white md:bg-transparent fixed top-0 left-0 h-full  flex flex-col justify-between transform transition-transform duration-300 z-50 
         ${open ? "translate-x-0" : "-translate-x-full"} 
-        md:translate-x-0 md:static md:w-64`}
+         md:translate-x-0 md:static md:w-64 ${mobOpen && "translate-x-0"} `}
       >
         <div className="flex flex-col h-full overflow-y-auto">
           {/* Header */}
           <div className="flex items-center justify-between px-6 py-4 bord er-b border-gray-200">
-            {/* <div> */}
-            <Link to={"/"} className="flex items-center space-x-2">
-              <Mail className="text-blue-600 w-6 h-6" />
-              <h1 className="text-xl font-semibold text-blue-600 font-serif">
-                z-mail.com
-              </h1>
-            </Link>
-            {/* </div> */}
-            <button
-              onClick={() => setOpen(false)}
-              className="md:hidden text-gray-500 hover:text-gray-700"
-            >
-              <X className="w-5 h-5" />
-            </button>
+            <div className="flex gap-4">
+              <button
+                onClick={() => setMobopen(false)}
+                className="p-1 rounded-md hover:bg-gray-200 "
+              >
+                <ListCollapse className="text-blue-500 w-6 h-6 " />
+              </button>
+              <Link
+                to={"/"}
+                className="flex items-center space-x-2 select-none"
+              >
+                <img src="/logo.png" alt="" className="w-10" />
+                <h1 className="text-xl font-semibold text-blue-500 font-seri f">
+                  ShortMail
+                </h1>
+              </Link>
+            </div>
           </div>
 
           {/* Compose Button */}
