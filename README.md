@@ -75,7 +75,7 @@ npm run dev
 
 # 📸 Preview
 
-(Add screenshots or a short demo GIF here once available)
+![image](./public/preview.png)
 
 # 🤝 Contributing
 
@@ -91,5 +91,9 @@ This project is licensed under the MIT [License](askdnskdn).
 
 ### Mohammad Asif
 
-📧 mohammadasif34.dev@gmail.com  
-**Portfolio**: https://mohammadasifhasnain.vercel.app
+**_🌐 Connect with Me_**
+
+- 💼 Portfolio: https://mohammadasifhasnain.vercel.app
+- 📧 Email: mohammadasif34.dev@gmail.com
+- 🐙 GitHub: https://github.com/mohammadasif34
+- 💬 LinkedIn: https://linkedin.com/in/mohammadasif34
