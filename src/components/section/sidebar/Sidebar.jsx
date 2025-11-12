@@ -122,15 +122,15 @@ const Sidebar = () => {
               closeSidebar={() => setOpen(false)}
             />
             <SidebarItem
-              icon={<Trash2 />}
-              label="Trash"
+              icon={<Notebook />}
+              label="Draft"
               state={state}
               onChange={setState}
               closeSidebar={() => setOpen(false)}
             />
             <SidebarItem
-              icon={<Notebook />}
-              label="Draft"
+              icon={<Trash2 />}
+              label="Trash"
               state={state}
               onChange={setState}
               closeSidebar={() => setOpen(false)}

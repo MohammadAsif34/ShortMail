@@ -1,5 +1,5 @@
 import React from "react";
-import { Inbox, Search } from "lucide-react";
+import { Inbox, Mail, Search } from "lucide-react";
 
 export default function NoMailFound({ type = "inbox" }) {
   return (
@@ -7,7 +7,7 @@ export default function NoMailFound({ type = "inbox" }) {
       {/* Icon */}
       <div className="relative mb-6">
         <div className="absolute -inset-4 bg-blue-100 rounded-full blur-2xl opacity-30" />
-        <Inbox className="w-20 h-20 text-blue-500 relative z-10" />
+        <Mail className="w-20 h-20 text-blue-500 relative z-10" />
       </div>
 
       {/* Title */}

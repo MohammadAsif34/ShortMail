@@ -65,9 +65,9 @@ const MailList = () => {
           <div className="flex-1 overflow-y-auto custom-scroll p-1 bg-gray-50">
             {/* ===== MAIL LIST ===== */}
             {pageData?.map((m, i) => (
-              <Link key={m?._id || i} to={BtoA(m._id)} className="">
-                <MailListCard key={m._id || i} mail={m} />
-              </Link>
+              // <Link key={m?._id || i} to={BtoA(m._id)} className="">
+              <MailListCard key={m._id || i} mail={m} />
+              // </Link>
             ))}
           </div>
         )}

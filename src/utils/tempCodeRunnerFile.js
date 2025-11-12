@@ -1,23 +1,13 @@
-// utils/printmail.js
-export const printMail = (mail) => {
-  const printWindow = window.open("", "_blank");
-  const htmlContent = `
-    <html>
-
-<head>
+<html>
+    <head>
     <title>${mail.subject || "ShortMail Message"}</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
 
-        * {
-            margin: 0;
-        }
-
         body {
-
-            padding: 30px;
             font-family: 'Inter', sans-serif;
             background-color: #f8fafc;
+            padding: 30px;
             color: #1e293b;
         }
 
@@ -28,7 +18,6 @@ export const printMail = (mail) => {
         }
 
         .meta {
-            flex-grow: 1;
             margin-bottom: 20px;
             font-size: 14px;
             color: #475569;
@@ -64,7 +53,7 @@ export const printMail = (mail) => {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 4px;
+            gap: px;
 
             img {
                 width: 60px;
@@ -72,46 +61,34 @@ export const printMail = (mail) => {
         }
 
         .stamp {
-
+            display: inline-block;
             padding: 6px 14px;
-            border-radius: 4px;
+            border-radius: 12px;
             font-weight: 600;
             letter-spacing: 0.5px;
-            background: #ddecff;
+            background: #eff6ff;
 
         }
     </style>
 </head>
 
 <body>
-    <div style="display:flex; ">
-        <div
-            style="width: 60px;height:60px;border:1px solid black;margin:4px;margin-right:8px;border-radius: 40px; border:1px solid lightgray">
-            <img src="http://localhost:5173/logo.png" style="width: 100%;" />
-        </div>
-        <div class="meta">
-            <strong>From:</strong> ${mail.from || "unknown@shortmail.com"}<br>
-            <strong>To:</strong> ${mail.to || "unknown@shortmail.com"}<br>
-            <strong>Date:</strong> ${new Date(mail.createdAt).toLocaleString()}
-        </div>
+    <h2>${mail.subject || "(No Subject)"}</h2>
+    <div class="meta">
+        <strong>From:</strong> ${mail.from || "unknown@shortmail.com"}<br>
+        <strong>To:</strong> ${mail.to || "unknown@shortmail.com"}<br>
+        <strong>Date:</strong> ${new Date(mail.createdAt).toLocaleString()}
     </div>
-    <h2>Subject : ${mail.subject || "(No Subject)"}</h2>
 
     <div class="divider"></div>
 
-    <div class="message">${mail?.message}</div>
+    <div class="message">${mail?.text}</div>
 
     <div class="footer">
         <img src="/logo.png" />
         <p class="stamp">️Powered by ShortMail</p>
-        <a href="https://www.shortmail.vercel.app/" style="text-decoration: none;color: black;">www.shortmail.vercel.app</p>
+        <p>www.shortmail.com</p>
     </div>
 </body>
 
 </html>
-  `;
-
-  printWindow.document.write(htmlContent);
-  printWindow.document.close();
-  printWindow.print();
-};

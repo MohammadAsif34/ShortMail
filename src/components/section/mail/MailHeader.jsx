@@ -1,5 +1,8 @@
 import {
+  Archive,
   ArrowLeft,
+  Mail,
+  MessageCircleCode,
   MoreVertical,
   PrinterIcon,
   ReplyIcon,
@@ -28,25 +31,37 @@ const MailHeader = ({ mail }) => {
 
         {/* Actions */}
         <div className="hidden md:flex items-center space-x-3">
+          <button className="p-2 rounded-full hover:bg-gray-200" title="unread">
+            <Mail className="w-5 h-5 text-gray-600" />
+          </button>
           <button
             className="p-2 rounded-full hover:bg-gray-200"
+            title="starred"
+          >
+            <Star className="w-5 h-5 text-gray-600" />
+          </button>
+          <button
+            className="p-2 rounded-full hover:bg-gray-200"
+            title="archive"
+          >
+            <Archive className="w-5 h-5 text-gray-600" />
+          </button>
+          <button
+            className="p-2 rounded-full hover:bg-gray-200"
+            title="print"
             onClick={() => printMail(mail)}
           >
             <PrinterIcon className="w-5 h-5 text-gray-600" />
           </button>
-          <button className="p-2 rounded-full hover:bg-gray-200">
-            <ReplyIcon className="w-5 h-5 text-gray-600" />
-          </button>
-          <button className="p-2 rounded-full hover:bg-gray-200">
-            <Star className="w-5 h-5 text-gray-600" />
-          </button>
-          <button className="p-2 rounded-full hover:bg-gray-200">
+        </div>
+        <div>
+          <button className="p-2 rounded-full hover:bg-gray-200" title="trash">
             <Trash2 className="w-5 h-5 text-gray-600" />
           </button>
+          <button className="p-2 rounded-full hover:bg-gray-200">
+            <MoreVertical className="w-5 h-5 text-gray-600" />
+          </button>
         </div>
-        <button className="p-2 rounded-full hover:bg-gray-200">
-          <MoreVertical className="w-5 h-5 text-gray-600" />
-        </button>
       </header>
     </>
   );

@@ -1,8 +1,4 @@
-// utils/printmail.js
-export const printMail = (mail) => {
-  const printWindow = window.open("", "_blank");
-  const htmlContent = `
-    <html>
+<html>
 
 <head>
     <title>${mail.subject || "ShortMail Message"}</title>
@@ -86,7 +82,7 @@ export const printMail = (mail) => {
 <body>
     <div style="display:flex; ">
         <div
-            style="width: 60px;height:60px;border:1px solid black;margin:4px;margin-right:8px;border-radius: 40px; border:1px solid lightgray">
+            style="width: 60px;height:60px;border:1px solid black;margin:4px 4px;border-radius: 40px; border:1px solid lightgray">
             <img src="http://localhost:5173/logo.png" style="width: 100%;" />
         </div>
         <div class="meta">
@@ -99,19 +95,13 @@ export const printMail = (mail) => {
 
     <div class="divider"></div>
 
-    <div class="message">${mail?.message}</div>
+    <div class="message">${mail?.text}</div>
 
     <div class="footer">
         <img src="/logo.png" />
         <p class="stamp">️Powered by ShortMail</p>
-        <a href="https://www.shortmail.vercel.app/" style="text-decoration: none;color: black;">www.shortmail.vercel.app</p>
+        <a href="https://www.shortmail.vercel.app/" style="text-decoration: none;color: black;">www.shortmail.com</p>
     </div>
 </body>
 
 </html>
-  `;
-
-  printWindow.document.write(htmlContent);
-  printWindow.document.close();
-  printWindow.print();
-};

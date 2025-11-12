@@ -4,7 +4,7 @@ const MailContent = ({ mail }) => {
   return (
     <>
       <p className="px-6 py-4 flex-1 leading-relaxed text-gray-700">
-        {mail?.text}
+        {mail?.message}
 
         {/* <span className="font-semibold text-gray-800">Team I-Mail</span> */}
       </p>

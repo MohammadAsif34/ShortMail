@@ -57,16 +57,41 @@ const mailSlice = createSlice({
         state.error = null;
       })
       .addCase(fetchMails.fulfilled, (state, action) => {
-        state.loading = false;
-        state.all = action.payload;
+        const { receive_mails, sent_mails, archived_mails } = action.payload;
 
+        state.all = [...receive_mails, ...sent_mails, ...archived_mails]; // merge all mail
+        state.all == // remove duplicate
+          state.all.filter(
+            (mail, idx, self) =>
+              idx === self.findIndex((m) => m._id === mailSlice._id)
+          );
+        // filter inbox mail
+        state.inbox = receive_mails.filter((m) => m.deleted == false);
+        // filter starred mail
+        state.starred = [
+          ...receive_mails.filter(
+            (m) => m.starred == true && m.deleted == false
+          ),
+          ...sent_mails.filter((m) => m.starred == true && m.deleted == false),
+          ...archived_mails.filter(
+            (m) => m.starred == true && m.deleted == false
+          ),
+        ];
+        // filter trash mail
+        state.trash = [
+          ...receive_mails.filter((m) => m.deleted == true),
+          ...sent_mails.filter((m) => m.deleted == true),
+          ...archived_mails.filter((m) => m.deleted == true),
+        ];
+        // filter sent mail
+        state.sent = sent_mails.filter((m) => m.deleted == false);
+        // filter archived mail
+        state.archived = archived_mails.filter((m) => m.deleted == false);
+
+        state.loading = false;
         // Filter mails into respective types
-        state.inbox = action.payload.filter((m) => m.type === "inbox");
-        state.sent = action.payload.filter((m) => m.type === "sent");
-        state.archived = action.payload.filter((m) => m.type === "archived");
-        state.trash = action.payload.filter((m) => m.delete == true);
-        state.starred = action.payload.filter((m) => m.type === "starred");
-        state.draft = action.payload.filter((m) => m.type === "draft");
+
+        // state.draft = action.payload.filter((m) => m.type === "draft");
       })
       .addCase(fetchMails.rejected, (state, action) => {
         state.loading = false;

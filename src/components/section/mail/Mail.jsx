@@ -9,6 +9,7 @@ import MailSenderInfo from "./MailSenderInfo";
 import MailContent from "./MailContent";
 import { useSelector } from "react-redux";
 import MailError from "../../component/MailError";
+import apiClient from "../../../api/apiClient";
 
 const Mail = () => {
   let id = useLocation().pathname.split("/");
@@ -16,6 +17,18 @@ const Mail = () => {
 
   const mails = useSelector((s) => s.mail.all);
   const mail = mails.filter((m) => m._id === id)[0];
+  useEffect(() => {
+    const readMail = async () => {
+      const res = await apiClient.put("/mail/read", { id: mail._id });
+      console.log("mail read: ", res);
+      if (res.status == "success") alert(res.message);
+    };
+    if (!mail.read) {
+      readMail();
+    }
+  }, []);
+
+  // user;
 
   if (!id) return <MailError />;
 

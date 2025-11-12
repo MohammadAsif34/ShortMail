@@ -33,7 +33,7 @@ const PrivateRoutes = ({ children }) => {
 
   // console.log("H-auth data:", auth);
   // console.log("H-User data:", user);
-  // console.log("H-mail data:", mail);
+  console.log("H-mail data:", mail);  
 
   if (user.loading) return <Loader />;
   if (!auth.isAuth) {
