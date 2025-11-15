@@ -34,7 +34,7 @@ export const sendEmails = createAsyncThunk(
   }
 );
 
-// Delete/restore mail --> done -->
+// Delete/restore mail --> done --> works
 export const trashMails = createAsyncThunk(
   "email/trashMails",
   async (id, thunkAPI) => {
