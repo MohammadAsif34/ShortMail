@@ -1,7 +1,12 @@
 import { ComposeMailFooter } from "./ComposeMailFooter";
 import { ComposeMailAttachment } from "./ComposeMailAttachment";
 
-export const ComposeMailForm = ({ form, handleChange, handleSubmit }) => {
+export const ComposeMailForm = ({
+  form,
+  handleChange,
+  handleSubmit,
+  loading,
+}) => {
   return (
     <>
       <form className="space-y-4" onSubmit={handleSubmit}>
@@ -51,7 +56,7 @@ export const ComposeMailForm = ({ form, handleChange, handleSubmit }) => {
           />
         </div>
         <ComposeMailAttachment />
-        <ComposeMailFooter />
+        <ComposeMailFooter loading={loading} />
       </form>
     </>
   );

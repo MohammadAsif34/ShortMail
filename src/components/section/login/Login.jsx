@@ -8,7 +8,7 @@ const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const [mail, setMail] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -19,7 +19,7 @@ const Login = () => {
     setLoading(true);
 
     try {
-      const data = await loginUser(mail, password);
+      const data = await loginUser(email, password);
       console.log(data);
       if (data.status == "success") {
         dispatch(login(data.data.token));
@@ -46,8 +46,8 @@ const Login = () => {
           id="email"
           type="email"
           placeholder="Email"
-          value={mail}
-          onChange={(e) => setMail(e.target.value)}
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           required
           autoComplete="email"
           className="w-full h-10 px-4 border border-gray-300 rounded-lg outline-0 focus:ring-2 focus ring-blue-300"

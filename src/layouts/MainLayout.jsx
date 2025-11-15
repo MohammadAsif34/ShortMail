@@ -1,13 +1,17 @@
 import React from "react";
-import { Outlet, useLocation } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import Header from "../components/section/header/Header";
 import Sidebar from "../components/section/sidebar/Sidebar";
+import { ToastContainer } from "react-toastify";
 
 const MainLayout = () => {
-  const type = useLocation().pathname.split("/");
-
   return (
     <>
+      <ToastContainer
+        autoClose={1000}
+        hideProgressBar={true}
+        closeButton={false}
+      />
       <main className="flex h-screen   text-gray-800 bg-gray-100">
         {/* ============= Sidebar ============ */}
         <Sidebar />

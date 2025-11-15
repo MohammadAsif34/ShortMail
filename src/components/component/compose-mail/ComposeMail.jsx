@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Paperclip, Send, X, Save } from "lucide-react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { ComposeMailForm } from "./ComposeMailForm";
-import { sendMail } from "../../../api/actions";
+import { toast } from "react-toastify";
+import { sendEmails } from "../../../redux/emailSlice";
 
 const defaultform = {
   to: "",
@@ -13,6 +14,8 @@ const defaultform = {
 export default function ComposeMail() {
   const [form, setForm] = useState(defaultform);
   const user = useSelector((s) => s.user.data);
+  const email = useSelector((s) => s.email);
+  const dispatch = useDispatch();
 
   const handleChange = (e) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -20,22 +23,17 @@ export default function ComposeMail() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    form.from = user.mail;
-    console.log(form);
-    // const send = async () => {
-    const res = await sendMail({
-      from: form.from,
-      to: form.to,
-      subject: form.subject,
-      message: form.message,
-    });
-    console.log(res);
-    if (res.status == "success") alert(res.message);
-    else console.warn(res.message);
-    // };
-    // send();
-    // console.log(form);
-    // alert("Email Sent! ✅");
+
+    form.from = user.email;
+    const sendRes = await dispatch(sendEmails(form));
+    if (sendEmails.rejected.match(sendRes)) toast.error("Email sending Failed");
+    else {
+      if (sendRes.payload.status === "success")
+        toast.success(sendRes.payload.message);
+      else toast.error("Something went wrong!");
+    }
+    console.log(sendRes.payload);
+
     window.history.back();
   };
 
@@ -60,6 +58,7 @@ export default function ComposeMail() {
           form={form}
           handleChange={handleChange}
           handleSubmit={handleSubmit}
+          loading={email.loading}
         />
       </div>
     </div>

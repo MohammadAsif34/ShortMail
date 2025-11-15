@@ -3,7 +3,9 @@ import { persistReducer, persistStore } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import authReducer from "./authSlice";
 import userReducer from "./userSlice";
-import mailReducer from "./mailSlice";
+import emailReducer from "./emailSlice";
+import tokenMiddleware from "../api/tokenMiddleware";
+console.log("store");
 
 const persistConfig = {
   key: "root",
@@ -14,7 +16,7 @@ const persistConfig = {
 const rootReducer = combineReducers({
   auth: authReducer,
   user: userReducer,
-  mail: mailReducer,
+  email: emailReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
@@ -24,7 +26,7 @@ export const store = configureStore({
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: false,
-    }),
+    }).concat(tokenMiddleware),
 });
 
 export const persistor = persistStore(store);

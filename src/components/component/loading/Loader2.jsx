@@ -1,9 +1,9 @@
 import React from "react";
 
-const Loader = ({ className = " w-[100px] h-[100px]" }) => {
+const Loader = ({ className = "w-[100px] h-[100px]" }) => {
   return (
     <div
-      className={`loader flex gap-2 justify-center items-center ${className}`}
+      className={`loader flex gap-2 justify-center items-center  ${className} `}
     >
       {" "}
       <style>{`

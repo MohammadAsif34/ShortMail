@@ -10,37 +10,52 @@ import {
   Trash2,
   User,
 } from "lucide-react";
-import { ReadMail, StarredMail, TrashMail } from "../../../api/actions";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  archivedMails,
+  readMails,
+  starredMails,
+  trashMails,
+} from "../../../redux/emailSlice";
+import { toast } from "react-toastify";
 
-const MailListCard = ({ mail }) => {
+const MailListCard = ({ mail, type }) => {
   const date = new Date(mail.createdAt);
   const day = date.getDate();
   const mon = date.toLocaleString("default", { month: "short" });
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   // mail moved/remove to/from trash
   const handleDelete = async (e, id) => {
     e.stopPropagation();
-    const res = await TrashMail({ id: id });
-    if (res.status == "success") alert(res.message);
-    else console.error("delete error");
+    const res = await dispatch(trashMails(id)).unwrap();
+    if (res.status == "success") toast.success(res.message);
+    else toast.error(res.message);
   };
 
   // starred/unstarred mail
   const handleStarred = async (e, id) => {
     e.stopPropagation();
-    const res = await StarredMail({ id: id });
-    if (res.status == "success") alert(res.message);
-    else console.error("delete error");
+    const res = await dispatch(starredMails(id)).unwrap();
+    if (res.status == "success") toast.success(res.message);
+    else toast.error(res.message);
   };
   // read/unread mail
   const handleRead = async (e, id) => {
     e.stopPropagation();
-    const res = await ReadMail({ id: id });
-    if (res.status == "success") alert(res.message);
-    else console.error("delete error");
+    const res = await dispatch(readMails(id)).unwrap();
+    if (res.status == "success") toast.success(res.message);
+    else toast.error(res.message);
+  };
+  // archived/unarchived mail
+  const handleArchived = async (e, id) => {
+    e.stopPropagation();
+    const res = await dispatch(archivedMails(id)).unwrap();
+    if (res.status == "success") toast.success(res.message);
+    else toast.error(res.message);
   };
 
   return (
@@ -85,10 +100,19 @@ const MailListCard = ({ mail }) => {
             className="w-10 h-10 rounded-full "
           /> */}
           <div className="flex flex-col ">
-            <h3 className="font-semibold  text-gray-800">{mail.from}</h3>
-            {/* <p className="text-gray-500 text-xs truncate">{mail.text}</p> */}
+            <h3 className="font-semibold  text-gray-800">
+              {/* {mail.to === email ? mail.to : mail.from}
+               */}
+              {/* {mail.to} */}
+              {type == "sent" ? mail.to : mail.from}
+            </h3>
           </div>
-          <p className="text-gray-700 text-sm">{mail.subject}</p>
+          <p className="  sm:w-20 md:w-30 text-gray-700 text-sm truncate">
+            {mail.subject}
+          </p>
+          <p className="max-md:hidden sm:w-20 md:w-30  text-gray-500 text-xs truncate">
+            {mail.message}
+          </p>
         </div>
 
         {/* action buttons */}
@@ -119,6 +143,7 @@ const MailListCard = ({ mail }) => {
             <button
               className="p-2 rounded-full hover:bg-gray-200"
               title="archive"
+              onClick={(e) => handleArchived(e, mail._id)}
             >
               <Archive className="w-4 h-4 text-gray-600" />
             </button>

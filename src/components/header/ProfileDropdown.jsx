@@ -1,11 +1,10 @@
-import { Camera, HelpCircle, LogOut, Settings, User, X } from "lucide-react";
-import React, { useEffect, useRef, useState } from "react";
+import { Camera, HelpCircle, LogOut, User, X } from "lucide-react";
+import React, { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../redux/authSlice";
 import { useNavigate } from "react-router-dom";
 
 const ProfileDropdown = ({ setOpen }) => {
-  // const [showLogout, setShowLogout] = useState(false);
   const dropdownRef = useRef(null);
   const navigate = useNavigate();
   const user = useSelector((s) => s.user.data);
@@ -38,8 +37,7 @@ const ProfileDropdown = ({ setOpen }) => {
           <X size={20} />
         </button>
         <div className="p-2 border-b border-gray-300 text-center">
-          <p className="text-sm py-2 text-gray-500">{user.mail}</p>
-          <div className="w-fit p-0.5 mx-auto  bg-blue-500 rounded-full cursor-default relative">
+          <div className="w-fit my-3 p-0.5 mx-auto  bg-blue-500 rounded-full cursor-default relative">
             <img
               src={user?.picture || "https://i.pravatar.cc/1000?img=12"}
               alt="user"
@@ -50,7 +48,8 @@ const ProfileDropdown = ({ setOpen }) => {
               className=" absolute bottom-2 right-1 p-2 bg-gray-200  shadow rounded-full cursor-pointer hover:bg-blue-200 hover:text-blue-600"
             />
           </div>
-          <h4 className="font-semibold py-2 text-gray-800">{user.fullname}</h4>
+          <p className="text-sm py- text-gray-500 ">{user.email}</p>
+          <h4 className="font-semibold py- text-gray-800">{user.fullname}</h4>
         </div>
 
         <div className="mx-6 my-4  rounded-3xl overflow-hidden flex flex-col gap-1">

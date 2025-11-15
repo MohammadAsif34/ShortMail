@@ -1,7 +1,8 @@
 import { Save, Send } from "lucide-react";
 import React from "react";
+import Loader from "../loading/Loader2";
 
-export const ComposeMailFooter = () => {
+export const ComposeMailFooter = ({ loading }) => {
   return (
     <>
       {/* Buttons */}
@@ -22,11 +23,18 @@ export const ComposeMailFooter = () => {
         </button>
         <button
           type="submit"
-          className="px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition flex items-center space-x-2 "
-          //   onClick={}
+          className="h-10 px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition flex items-center space-x-2 "
         >
-          <Send className="w-4 h-4" />
-          <span>Send</span>
+          {loading ? (
+            <div className="h-full">
+              <Loader className="w-15 h-4 mt-1" />
+            </div>
+          ) : (
+            <>
+              <Send className="w-4 h-4" />
+              <span>Send</span>
+            </>
+          )}
         </button>
       </div>
     </>

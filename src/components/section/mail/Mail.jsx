@@ -15,11 +15,11 @@ const Mail = () => {
   let id = useLocation().pathname.split("/");
   id = atob(id[id.length - 1]);
 
-  const mails = useSelector((s) => s.mail.all);
+  const mails = useSelector((s) => s.email.all);
   const mail = mails.filter((m) => m._id === id)[0];
   useEffect(() => {
     const readMail = async () => {
-      const res = await apiClient.put("/mail/read", { id: mail._id });
+      const res = await apiClient.put("/email/read", { id: mail._id });
       console.log("mail read: ", res);
       if (res.status == "success") alert(res.message);
     };

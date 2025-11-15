@@ -4,41 +4,36 @@ import { Navigate } from "react-router-dom";
 import Loader from "../components/component/loading/Loader";
 import { fetchUser } from "../redux/userSlice";
 import { logout } from "../redux/authSlice";
-import { fetchMails } from "../redux/mailSlice";
+import apiClient from "../api/apiClient";
+import { fetchMails } from "../redux/emailSlice";
 
 const PrivateRoutes = ({ children }) => {
   const auth = useSelector((s) => s.auth);
   const user = useSelector((s) => s.user);
-  const mail = useSelector((s) => s.mail);
+  const mail = useSelector((s) => s.email);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const fetch = async () => {
-      if (!auth?.token) return dispatch(logout());
-      const res = await dispatch(fetchUser());
-      if (fetchUser.rejected.match(res)) {
-        // dispatch(logout({ dispatch, clearUser: true, clearMail: true }));
-        dispatch(logout());
-        return;
-      }
-      const res2 = await dispatch(fetchMails());
-      if (fetchMails.rejected.match(res2)) {
-        // dispatch(logout({ dispatch, clearUser: true, clearMail: true }));
-        dispatch(logout());
-        return;
-      }
+    const FetchDetails = async () => {
+      // fetch authenticated user details
+      const userRes = await dispatch(fetchUser());
+      if (fetchUser.rejected.match(userRes)) return dispatch(logout());
+
+      // fetch all email of authenticated user
+      const emailRes = await dispatch(fetchMails());
+      if (fetchMails.rejected.match(emailRes))
+        console.log("fetch emails failed");
+      // const emailsRes = await dispatch();
     };
-    fetch();
-  }, [dispatch, auth]);
+    FetchDetails();
+  }, []);
 
   // console.log("H-auth data:", auth);
   // console.log("H-User data:", user);
-  console.log("H-mail data:", mail);  
+  console.log("H-mail data:", mail);
 
   if (user.loading) return <Loader />;
-  if (!auth.isAuth) {
-    return <Navigate to="/login" replace />;
-  }
+  if (!auth.isAuth) return <Navigate to="/login" replace />;
 
   return children;
 };

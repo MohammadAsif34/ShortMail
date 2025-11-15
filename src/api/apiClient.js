@@ -1,6 +1,5 @@
 // src/api/apiClient.js
 import axios from "axios";
-import { store } from "../redux/store";
 const apiClient = axios.create({
   baseURL: "http://localhost:8080/api",
   headers: {
@@ -8,13 +7,14 @@ const apiClient = axios.create({
   },
 });
 
-apiClient.interceptors.request.use((config) => {
-  // const token = localStorage.getItem("token");
-  const token = store.getState().auth.token;
-  if (token) {
-    config.headers.Authorization = `Bearer ${token}`;
-  }
-  return config;
-});
+// import { store } from "../redux/store";
+// apiClient.interceptors.request.use((config) => {
+//   // const token = localStorage.getItem("token");
+//   const token = store.getState().auth.token;
+//   if (token) {
+//     config.headers.Authorization = `Bearer ${token}`;
+//   }
+//   return config;
+// });
 
 export default apiClient;

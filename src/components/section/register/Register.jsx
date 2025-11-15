@@ -6,7 +6,7 @@ const Register = () => {
   const navigate = useNavigate();
 
   const [fullname, setFullname] = useState("");
-  const [mail, setMail] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
@@ -18,14 +18,13 @@ const Register = () => {
     setLoading(true);
 
     try {
-      const res = await registerUser(fullname, mail, password);
+      const res = await registerUser(fullname, email, password);
       if (res.status === "success") {
         setSuccess(res.message);
         setTimeout(() => {
           navigate("/login");
         }, 2000);
       }
-      // alert("Registration successful! Please login.");
     } catch (err) {
       setError(err.response?.data?.message || "Registration failed");
     } finally {
@@ -60,9 +59,9 @@ const Register = () => {
         />
         <input
           type="email"
-          placeholder="mail"
-          value={mail}
-          onChange={(e) => setMail(e.target.value)}
+          placeholder="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           required
           className="w-full h-10 px-4 border border-gray-300 rounded-lg outline-0 focus:ring-2 focus ring-blue-300"
         />

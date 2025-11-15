@@ -1,8 +1,9 @@
 import apiClient from "./apiClient";
 
+// @desc send email --> done --> works
 export const sendMail = async ({ from, to, subject, message }) => {
   console.log({ from, to, subject, message });
-  const res = await apiClient.post("/mail/send", {
+  const res = await apiClient.post("/email/send", {
     from,
     to,
     subject,

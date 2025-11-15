@@ -7,7 +7,8 @@ export const getInbox = async () => {
 };
 
 export const getSentMails = async () => {
-  const res = await apiClient.get("/mails/sent");
+  console.log("send api call");
+  const res = await apiClient.get("/emails/sent");
   return res.data;
 };
 
