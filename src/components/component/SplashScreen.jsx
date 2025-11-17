@@ -4,7 +4,7 @@ import Loader2 from "./loading/Loader2";
 
 const SplashScreen = () => {
   return (
-    <div className="flex items-center justify-center h-screen bcg-gradient-to-br bg-[url(/bg.png)] bg-cover from-blue-500 to-purple-600 ">
+    <div className="flex items-center justify-center h-screen bcg-gradient-to-br bg-[url(/bg-shortmail.jpg)] bg-cover bg-center from-blue-500 to-purple-600 ">
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}

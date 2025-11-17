@@ -7,35 +7,33 @@ import {
 } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
 
-// import { fetchMails } from "../../../redux/mailSlice";
 import Loader from "../../component/loading/Loader2";
-// import { fetchMails } from "../../../redux/mailSlice";
+import { fetchMails } from "../../../redux/emailSlice";
+import { toast } from "react-toastify";
 
 const MailListHeader = ({ type, start, end, totalPage, page, setPage }) => {
-  const mail = useSelector((s) => s.mail);
+  const email = useSelector((s) => s.email);
   const dispatch = useDispatch();
 
-  // const refreshMail = async () => {
-  //   const res = await dispatch(fetchMails());
-  //   if (fetchMails.rejected.match(res)) {
-  //     // dispatch(logout());
-  //     // return;
-  //   }
-  // };
-  // let mail;
+  const refreshMail = async () => {
+    const res = await dispatch(fetchMails());
+    if (fetchMails.rejected.match(res))
+      toast.error(res.message || "Refresh Failed!");
+    toast.success(res.message || "Email refresh ");
+  };
 
   return (
     <>
-      {mail?.loading && (
+      {email?.loading && (
         <div className="fixed top-1 left-1/2 px-4 py-1 border rounded-md flex items-center bg-blue-200 text-blue-500">
           Loading <Loader className="w-[80px] h-0.5" />
         </div>
       )}
-      <div className="flex items-center justify-between px-6 py-2 bg-white shadow-sm sticky top-0 z-10">
+      <div className="flex items-center justify-between px-6 py-2 bg-white/30 backdrop-blur-xl shadow-sm sticky top-0 z-10">
         <div className="flex gap-8 items-center">
           <button
             className="p-2 rounded-full hover:bg-gray-100"
-            // onClick={() => refreshMail()}
+            onClick={() => refreshMail()}
           >
             <RotateCw size={16} />
           </button>

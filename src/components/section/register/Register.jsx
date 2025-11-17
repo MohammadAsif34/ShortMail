@@ -33,15 +33,15 @@ const Register = () => {
   };
 
   return (
-    <div className=" border-2 border-blue-500 rounded-2xl">
+    <div className="bg-white/20 backdrop-blur-xl border-2 border-blue-300 rounded-2xl">
       <h2 className="text-center text-2xl md:text-3xl text-blue-500 my-10 font-bold font-serif ">
-        Register for ShortMail
+        Register at ShortMail
       </h2>
       <form
         onSubmit={handleRegister}
-        className="min-w-xs md:w-xl px-8  flex flex-col gap-8"
+        className="min-w-xs md:w-xl px-8  flex flex-col gap-2"
       >
-        <div className="min-h-8 text-center">
+        <div className="min-h-6 text-center">
           {success && (
             <p className="text-green-500 font-semibold ">
               {success} <br /> <span>redirecting...</span>
@@ -49,35 +49,40 @@ const Register = () => {
           )}
           {error && <p className="text-red-500 ">{error}</p>}
         </div>
+        <label className="text-gray-700 mt-2 px-2">Full Name</label>
         <input
           type="text"
           placeholder="Full Name"
           value={fullname}
           onChange={(e) => setFullname(e.target.value)}
           required
-          className="w-full h-10 px-4 border border-gray-300 rounded-lg outline-0 focus:ring-2 focus ring-blue-300"
+          className="w-full h-10 px-4 bg-gray-100/50 border border-blue-300 rounded-lg outline-0 focus:ring-2 focus ring-blue-400"
         />
+        <label className="text-gray-700 mt-2 px-2">New Email</label>
         <input
           type="email"
           placeholder="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-          className="w-full h-10 px-4 border border-gray-300 rounded-lg outline-0 focus:ring-2 focus ring-blue-300"
+          className="w-full h-10 px-4 bg-gray-100/50 border border-blue-300 rounded-lg outline-0 focus:ring-2 focus ring-blue-400"
+          // className="w-full h-10 px-4 border border-gray-300 rounded-lg outline-0 focus:ring-2 focus ring-blue-300"
         />
+        <label className="text-gray-700 mt-2 px-2">Password</label>
         <input
           type="password"
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
-          className="w-full h-10 px-4 border border-gray-300 rounded-lg outline-0 focus:ring-2 focus ring-blue-300"
+          className="w-full h-10 px-4 bg-gray-100/50 border border-blue-300 rounded-lg outline-0 focus:ring-2 focus ring-blue-400"
+          // className="w-full h-10 px-4 border border-gray-300 rounded-lg outline-0 focus:ring-2 focus ring-blue-300"
         />
         <button
           type="submit"
           disabled={loading}
-          className="w-full h-10 px-4 border border-gray-300 rounded-lg
-        bg-blue-500 text-white"
+          className="w-full h-10 mt-4 px-4 rounded-lg
+        bg-blue-400 text-white hover:bg-blue-500 transition duration-300 ease-in-out"
         >
           {loading ? "Registering..." : "Register"}
         </button>

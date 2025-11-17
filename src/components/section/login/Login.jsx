@@ -33,15 +33,16 @@ const Login = () => {
   };
 
   return (
-    <div className=" border-2 border-blue-500 rounded-2xl">
+    <div className="bg-white/20 backdrop-blur-xl border-2 border-blue-300 rounded-2xl">
       <h2 className="text-center text-2xl md:text-3xl text-blue-500 my-10 font-bold font-serif ">
-        Login to ShortMail
+        Login At ShortMail
       </h2>
       <form
         onSubmit={handleLogin}
-        className="min-w-xs md:w-xl px-8  flex flex-col gap-8"
+        className="min-w-xs md:w-xl px-8  flex flex-col gap-2"
       >
         {error && <p className="text-red-500 text-center">{error}</p>}
+        <label className="text-gray-700 mt-2 px-2">Email </label>
         <input
           id="email"
           type="email"
@@ -50,8 +51,9 @@ const Login = () => {
           onChange={(e) => setEmail(e.target.value)}
           required
           autoComplete="email"
-          className="w-full h-10 px-4 border border-gray-300 rounded-lg outline-0 focus:ring-2 focus ring-blue-300"
+          className="w-full h-10 px-4 border bg-gray-100/50 border-blue-300 rounded-lg outline-0 focus:ring-2 focus ring-blue-400"
         />
+        <label className="text-gray-700 mt-2 px-2">Password</label>
         <input
           type="password"
           placeholder="Password"
@@ -59,12 +61,12 @@ const Login = () => {
           onChange={(e) => setPassword(e.target.value)}
           required
           autoComplete="password"
-          className="w-full h-10 px-4 border border-gray-300 rounded-lg outline-0 focus:ring-2 focus ring-blue-300"
+          className="w-full h-10 px-4 border bg-gray-100/50 border-blue-300 rounded-lg outline-0 focus:ring-2 focus ring-blue-400"
         />
         <button
           type="submit"
           disabled={loading}
-          className="w-full h-10 px-4 border border-gray-300 rounded-lg bg-blue-500 text-white"
+          className="w-full h-10 px-4 mt-4 rounded-lg bg-blue-400 text-white hover:bg-blue-500 transition duration-300 ease-in-out disabled:cursor-progress"
         >
           {loading ? "Logging in..." : "Login"}
         </button>

@@ -35,7 +35,14 @@ const PrivateRoutes = ({ children }) => {
   if (user.loading) return <Loader />;
   if (!auth.isAuth) return <Navigate to="/login" replace />;
 
-  return children;
+  return (
+    <>
+      <div className="relative">
+        <div className="w-screen h-screen absolute top-0 left-0 bg-[url('./bg-shortmail.jpg')] bg-cover bg-center -z-10 "></div>
+        {children}
+      </div>
+    </>
+  );
 };
 
 export default PrivateRoutes;

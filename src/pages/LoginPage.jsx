@@ -4,7 +4,7 @@ import Login from "../components/section/login/Login";
 const LoginPage = () => {
   return (
     <>
-      <div className="w-screen h-screen flex justify-center items-center ">
+      <div className="w-screen h-screen flex justify-center items-center relative ">
         <Login />
       </div>
     </>

@@ -11,14 +11,8 @@ import {
   User,
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import {
-  archivedMails,
-  readMails,
-  starredMails,
-  trashMails,
-} from "../../../redux/emailSlice";
-import { toast } from "react-toastify";
+
+import { useEmailActions } from "../../../hooks/useEmailActions";
 
 const MailListCard = ({ mail, type }) => {
   const date = new Date(mail.createdAt);
@@ -26,42 +20,16 @@ const MailListCard = ({ mail, type }) => {
   const mon = date.toLocaleString("default", { month: "short" });
 
   const navigate = useNavigate();
-  const dispatch = useDispatch();
-
-  // mail moved/remove to/from trash
-  const handleDelete = async (e, id) => {
-    e.stopPropagation();
-    const res = await dispatch(trashMails(id)).unwrap();
-    if (res.status == "success") toast.success(res.message);
-    else toast.error(res.message);
-  };
-
-  // starred/unstarred mail
-  const handleStarred = async (e, id) => {
-    e.stopPropagation();
-    const res = await dispatch(starredMails(id)).unwrap();
-    if (res.status == "success") toast.success(res.message);
-    else toast.error(res.message);
-  };
-  // read/unread mail
-  const handleRead = async (e, id) => {
-    e.stopPropagation();
-    const res = await dispatch(readMails(id)).unwrap();
-    if (res.status == "success") toast.success(res.message);
-    else toast.error(res.message);
-  };
-  // archived/unarchived mail
-  const handleArchived = async (e, id) => {
-    e.stopPropagation();
-    const res = await dispatch(archivedMails(id)).unwrap();
-    if (res.status == "success") toast.success(res.message);
-    else toast.error(res.message);
-  };
+  const { handleArchived, handleDelete, handleStarred, handleRead } =
+    useEmailActions();
 
   return (
     <>
       {/* ======== mobile view card ================= */}
-      <div className="max-smw-xs md:hidden mt-1 bg-white  md: py-2 px-2 rounded-sm flex items-center justify-between overflow-hidden">
+      <div
+        className="max-smw-xs md:hidden mt-1 bg-white/30 backdrop-blur-xl  md: py-2 px-2 rounded-sm flex items-center justify-between overflow-hidden"
+        onClick={() => navigate(btoa(mail._id))}
+      >
         <div className="flex flex-1 items-center gap-2 px ">
           <div className="w-10 h-10 rounded-full bg-gray-200 overflow-hidden ">
             <img
@@ -79,7 +47,13 @@ const MailListCard = ({ mail, type }) => {
         </div>
         <div className=" text-gray-500 ">
           <p className="font-semibold text-sm">{day + " " + mon}</p>
-          <Star size={18} className="mx-auto mt-2" />
+          <button onClick={(e) => handleStarred(e, mail._id)}>
+            {mail.starred ? (
+              <StarOff size={18} className="mx-auto mt-2" />
+            ) : (
+              <Star size={18} className="mx-auto mt-2" />
+            )}
+          </button>
         </div>
       </div>
 

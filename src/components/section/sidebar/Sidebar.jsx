@@ -52,7 +52,7 @@ const Sidebar = () => {
 
       {/* Sidebar for desktop & mobile */}
       <aside
-        className={` bg-white md:bg-transparent fixed top-0 left-0 h-full  flex flex-col justify-between transform transition-transform duration-300 z-50 
+        className={` bg-white/75 backdrop-blur-2xl md:bg-transparent fixed top-0 left-0 h-full  flex flex-col justify-between transform transition-transform duration-300 z-50 
         ${open ? "translate-x-0" : "-translate-x-full"} 
          md:translate-x-0 md:static md:w-64 ${mobOpen && "translate-x-0"} `}
       >

@@ -53,7 +53,7 @@ const MailList = () => {
 
   return (
     <>
-      <div className="w-full h-full flex flex-col">
+      <div className="w-full h-full flex flex-col bg-red- 200/20 ba ckdrop-blur-xl">
         {/* ===== HEADER ===== */}
         <MailListHeader
           type={type}
@@ -66,7 +66,7 @@ const MailList = () => {
         {email?.length === 0 ? (
           <NoMailFound />
         ) : (
-          <div className="flex-1 overflow-y-auto custom-scroll p-1 bg-gray-50">
+          <div className="flex-1 overflow-y-auto custom-scroll p-1">
             {/* <p>{JSON.stringify(email)}</p> */}
             {/* ===== MAIL LIST ===== */}
             {pageData?.map((m) => (

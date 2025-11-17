@@ -10,7 +10,7 @@ const Header = () => {
   return (
     <>
       <header className="hidden min-md:flex p py-2   items-center justify-between">
-        <div className="flex items-center space-x-3 w-full max-w-md bg-white rounded-full px-3 py-2">
+        <div className="flex items-center space-x-3 w-full max-w-md bg-white/40 backdrop-blur-xl rounded-full px-3 py-2">
           <Search className="w-5 h-5 text-gray-500" />
           <input
             type="text"
@@ -20,7 +20,7 @@ const Header = () => {
         </div>
         <div className=" mr-4  relative ">
           <button
-            className="flex items-center focus:outline-2 outline-blue-500 rounded-full border-2 border-blue-500"
+            className="flex items-center focus:outline-2 outline-blue-500 rounded-full border-2 border-blue-500 overflow-hidden"
             onClick={() => setOpen((p) => !p)}
           >
             <img

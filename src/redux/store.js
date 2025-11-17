@@ -5,7 +5,6 @@ import authReducer from "./authSlice";
 import userReducer from "./userSlice";
 import emailReducer from "./emailSlice";
 import tokenMiddleware from "../api/tokenMiddleware";
-console.log("store");
 
 const persistConfig = {
   key: "root",
