@@ -15,12 +15,12 @@ const MobileHeader = ({ user, setMobopen }) => {
           >
             <ListCollapse className="text-blue-500 w-6 h-6 " />
           </button>
-          <div className="flex items-center space-x-3 w-full  bg-white/40 backdrop-blur-2xl rounded-full px-3 py-2">
+          <div className="flex items-center space-x-3 w bg-white/40 backdrop-blur-2xl rounded-full px-3 py-2">
             <Search className="w-5 h-5 text-gray-500" />
             <input
               type="text"
               placeholder="Search mail..."
-              className=" h-6 bg-transparent outline-none w-full text-sm text-blue-500"
+              className="max  w-20 h-6 bg-transparent outline-none  text-sm text-blue-500"
             />
           </div>
           <div className=" relative ">

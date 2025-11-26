@@ -15,10 +15,13 @@ import { useNavigate } from "react-router-dom";
 import { useEmailActions } from "../../../hooks/useEmailActions";
 
 const MailListCard = ({ mail, type }) => {
-  let date = new Date(mail.createdAt);
-  const day = date.getDate();
-  const mon = date.toLocaleString("default", { month: "short" });
-  date = day + " " + mon;
+  let date = "25 Nov";
+  if (mail?.createdAt) {
+    let d = new Date(mail?.createdAt);
+    const day = d.getDate();
+    const mon = d.toLocaleString("default", { month: "short" });
+    date = day + " " + mon;
+  }
 
   const navigate = useNavigate();
   const { handleArchived, handleDelete, handleStarred, handleRead } =
@@ -27,33 +30,55 @@ const MailListCard = ({ mail, type }) => {
   return (
     <>
       {/* ======== mobile view card ================= */}
+      {/* ======== Mobile Mail Card ======== */}
       <div
-        className="max-smw-xs md:hidden mt-1 bg-white/30 backdrop-blur-xl  md: py-2 px-2 rounded-sm flex items-center justify-between overflow-hidden"
         onClick={() => navigate(btoa(mail._id))}
+        className="
+    md:hidden
+    w-full
+    mt-2
+    px-3 py-2
+    flex items-center justify-between
+    rounded-md
+    bg-white/30 backdrop-blur-xl
+    shadow-sm
+    cursor-pointer
+    active:scale-[0.99]
+    transition
+  "
       >
-        <div className="flex flex-1 items-center gap-2 px ">
-          <div className="w-10 h-10 rounded-full bg-gray-200 overflow-hidden ">
+        {/* Left Section */}
+        <div className="flex flex-1 items-center gap-3 overflow-hidden">
+          {/* Avatar */}
+          <div className="w-10 h-10 flex-shrink-0 rounded-full bg-gray-200 overflow-hidden">
             <img
-              src={mail?.picture || "https://i.pravatar.cc/150?img=8"}
-              alt=""
+              src={mail?.picture || "/default_avatar.png"}
+              alt="avatar"
+              className="w-full h-full object-cover"
             />
           </div>
-          <div className="w-3/4 ">
-            <h3 className="font-semibold text-lg text-gray-800 truncate ">
+
+          {/* Mail Info */}
+          <div className="flex flex-col min-w-0">
+            <h3 className="text-sm font-semibold text-gray-800 truncate">
               {mail.from}
             </h3>
-            <p className="text-gray-500 text-sm truncate">{mail.subject}</p>
+            <p className="text-xs text-gray-600 truncate">{mail.subject}</p>
           </div>
-          {/* <p className="text-gray-500 text-xs truncate">{mail.text}</p> */}
         </div>
-        <div className=" text-gray-500 ">
-          <p className="font-semibold text-sm">{date ? date : "25 Novs"}</p>
-          <button onClick={(e) => handleStarred(e, mail._id)}>
-            {mail.starred ? (
-              <StarOff size={18} className="mx-auto mt-2" />
-            ) : (
-              <Star size={18} className="mx-auto mt-2" />
-            )}
+
+        {/* Right Section */}
+        <div className="flex flex-col items-center gap-1 ml-2 text-xs text-gray-500">
+          <span className="font-medium whitespace-nowrap">
+            {date || "25 Nov"}
+          </span>
+
+          <button
+            onClick={(e) => handleStarred(e, mail._id)}
+            className="text-gray-600 hover:text-yellow-500 active:scale-90 transition"
+            aria-label="Star mail"
+          >
+            {mail.starred ? <StarOff size={18} /> : <Star size={18} />}
           </button>
         </div>
       </div>
