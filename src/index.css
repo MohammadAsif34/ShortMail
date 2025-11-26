@@ -15,13 +15,11 @@ button {
 
 /* ===== Global Reset ===== */
 
-
 /* ===== Root Background (loads before React) ===== */
-
 
 /* ✅ Universal Background Image */
 :root {
-  --app-bg: url("/bg.jpg");
+  --app-bg: url("/bg-shortmail.jpg");
 }
 
 /* ✅ Background applied before JS loads */
