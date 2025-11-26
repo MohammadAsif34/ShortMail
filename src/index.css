@@ -12,3 +12,31 @@
 button {
   cursor: pointer;
 }
+
+/* ===== Global Reset ===== */
+
+
+/* ===== Root Background (loads before React) ===== */
+
+
+/* ✅ Universal Background Image */
+:root {
+  --app-bg: url("/bg.jpg");
+}
+
+/* ✅ Background applied before JS loads */
+body {
+  min-height: 100vh;
+  background-image: var(--app-bg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* optional */
+  font-family: system-ui, sans-serif;
+}
+
+/* ✅ Prevent white flash during route change */
+#root {
+  min-height: 100vh;
+  background-color: transparent;
+}
