@@ -68,14 +68,14 @@ const router = createBrowserRouter([
   { path: "*", element: <ErrorPage /> },
 ]);
 const App = () => {
-  const [start, setStart] = useState(true);
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setStart(false);
-    }, 1000);
-    return () => clearTimeout(timer);
-  }, []);
-  if (start) return <SplashScreen />;
+  // const [start, setStart] = useState(true);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setStart(false);
+  //   }, 1000);
+  //   return () => clearTimeout(timer);
+  // }, []);
+  // if (start) return <SplashScreen />;
   return <RouterProvider router={router} />;
 };
 

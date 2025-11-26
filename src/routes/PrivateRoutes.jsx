@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
 import Loader from "../components/component/loading/Loader";
@@ -6,6 +6,7 @@ import { fetchUser } from "../redux/userSlice";
 import { logout } from "../redux/authSlice";
 import apiClient from "../api/apiClient";
 import { fetchMails } from "../redux/emailSlice";
+import SplashScreen from "../components/component/SplashScreen";
 
 const PrivateRoutes = ({ children }) => {
   const auth = useSelector((s) => s.auth);
@@ -30,9 +31,18 @@ const PrivateRoutes = ({ children }) => {
 
   // console.log("H-auth data:", auth);
   // console.log("H-User data:", user);
-  console.log("H-mail data:", mail);
+  // console.log("H-mail data:", mail);
 
-  if (user.loading) return <Loader />;
+  // if (user.loading) return <Loader />;
+  const [start, setStart] = useState(true);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setStart(false);
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
+  if (start) return <SplashScreen />;
+  if (user.loading || start) return <SplashScreen />;
   if (!auth.isAuth) return <Navigate to="/login" replace />;
 
   return (

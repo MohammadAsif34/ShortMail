@@ -220,3 +220,106 @@
     "folder": "Inbox"
   }
 ]
+
+{
+  "_id": {
+    "$oid": "6927522a75f34d1de6d0c545"
+  },
+  "fullname": "Guest",
+  "nickname": "",
+  "email": "guest@shortmail.com",
+  "recovery_email": "",
+  "password": "$2b$10$SIby6cA2aSwu9LM8Sv6R4OYE57L3qvIa6s0paxCiiKY/7RfB5PLRe",
+  "dob": "",
+  "picture": "/default_avatar.png",
+  "phone": null,
+  "location": "",
+  "mode": "light",
+  "emails": [],
+  "createdAt": {
+    "$date": "2025-11-26T19:16:58.398Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-26T19:16:58.398Z"
+  },
+  "__v": 0
+}
+
+{
+  "_id": {
+    "$oid": "69274ef875f34d1de6d0c50a"
+  },
+  "fullname": "Temporary",
+  "nickname": "",
+  "email": "temporary@shortmail.com",
+  "recovery_email": "",
+  "password": "$2b$10$Bo.PuIOxA44GInFld4Ehu.xOBdqko1A1RIuZ7oSb6/.NUFqWr8mOe",
+  "dob": "",
+  "picture": "/default_avatar.png",
+  "phone": null,
+  "location": "",
+  "mode": "light",
+  "emails": [
+    {
+      "$oid": "69274e702a168cefb3b5c591"
+    },
+    {
+      "$oid": "69274e702a168cefb3b5c592"
+    },
+    {
+      "$oid": "69274e702a168cefb3b5c593"
+    },
+    {
+      "$oid": "69274e702a168cefb3b5c594"
+    },
+    {
+      "$oid": "69274e702a168cefb3b5c595"
+    },
+    {
+      "$oid": "69274e702a168cefb3b5c596"
+    },
+    {
+      "$oid": "69274e702a168cefb3b5c597"
+    },
+    {
+      "$oid": "69274e702a168cefb3b5c598"
+    },
+    {
+      "$oid": "69274e702a168cefb3b5c599"
+    },
+    {
+      "$oid": "69274e702a168cefb3b5c59a"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-11-26T19:03:20.195Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-26T19:03:20.195Z"
+  },
+  "__v": 0
+}
+
+{
+  "_id": {
+    "$oid": "692753fb75f34d1de6d0c55b"
+  },
+  "fullname": "Guest",
+  "nickname": "",
+  "email": "guest@shortmail.com",
+  "recovery_email": "",
+  "password": "$2b$10$p05W9YwSuqDrLmnWLNODzuAWsWScoQyXFcBI8azKmgQBoSRcFgagK",
+  "dob": "",
+  "picture": "/default_avatar.png",
+  "phone": null,
+  "location": "",
+  "mode": "light",
+  "emails": [],
+  "createdAt": {
+    "$date": "2025-11-26T19:24:43.200Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-26T19:24:43.200Z"
+  },
+  "__v": 0
+}

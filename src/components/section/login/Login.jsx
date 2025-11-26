@@ -3,8 +3,10 @@ import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { loginUser } from "../../../api/authApi";
 import { login } from "../../../redux/authSlice";
+import { Eye, EyeClosed } from "lucide-react";
 
 const Login = () => {
+  const [view, setView] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -24,9 +26,11 @@ const Login = () => {
       if (data.status == "success") {
         dispatch(login(data.data.token));
         navigate("/");
+      } else {
+        setError("Invalid Credential!!");
       }
     } catch (err) {
-      setError(err?.message || "Login failed");
+      setError(err?.messsage || "Login failed? Invalid Credential");
     } finally {
       setLoading(false);
     }
@@ -34,6 +38,24 @@ const Login = () => {
 
   return (
     <div className="bg-white/20 backdrop-blur-xl border-2 border-blue-300 rounded-2xl">
+      <div className="w-fit mx-auto m-2 py-1 px-6 text-amber-40 text-orange-500 bg-white border rounded-xl flex gap-4 cursor-default">
+        Temporary Credentials{" "}
+        <button
+          className="cursor-pointer"
+          onMouseEnter={() => setView(true)}
+          onMouseLeave={() => setView(false)}
+        >
+          {view ? <Eye /> : <EyeClosed />}
+        </button>
+      </div>
+      {view && (
+        <div className="absolute top-12 right-0 p-2 px-4 text-sm bg-blue-400 rounded-2xl">
+          {/* <p>Email: guest@shortmail.com</p>
+          <p>Password: guest123</p> */}
+          <p>Email: temporary@shortmail.com</p>
+          <p>Password: temporary123</p>
+        </div>
+      )}
       <h2 className="text-center text-2xl md:text-3xl text-blue-500 my-10 font-bold font-serif ">
         Login At ShortMail
       </h2>
