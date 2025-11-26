@@ -15,9 +15,10 @@ import { useNavigate } from "react-router-dom";
 import { useEmailActions } from "../../../hooks/useEmailActions";
 
 const MailListCard = ({ mail, type }) => {
-  const date = new Date(mail.createdAt);
+  let date = new Date(mail.createdAt);
   const day = date.getDate();
   const mon = date.toLocaleString("default", { month: "short" });
+  date = day + " " + mon;
 
   const navigate = useNavigate();
   const { handleArchived, handleDelete, handleStarred, handleRead } =
@@ -46,7 +47,7 @@ const MailListCard = ({ mail, type }) => {
           {/* <p className="text-gray-500 text-xs truncate">{mail.text}</p> */}
         </div>
         <div className=" text-gray-500 ">
-          <p className="font-semibold text-sm">{day + " " + mon}</p>
+          <p className="font-semibold text-sm">{date ? date : "25 Novs"}</p>
           <button onClick={(e) => handleStarred(e, mail._id)}>
             {mail.starred ? (
               <StarOff size={18} className="mx-auto mt-2" />
