@@ -315,14 +315,14 @@ const HelpSupport = () => {
       </div>
 
       <p className="text-gray-600 text-sm leading-relaxed mb-4">
-        Need help with I-Mail.in? We’re here to assist you with any issue or
+        Need help with shortmail.com? We’re here to assist you with any issue or
         question you might have.
       </p>
 
       <ul className="space-y-2 text-sm text-gray-700">
         <li className="flex items-center gap-2">
           <Mail className="w-4 h-4 text-blue-500" />
-          <span>Email us: support@i-mail.in</span>
+          <span>Email us: support@shortmail.com</span>
         </li>
         <li className="flex items-center gap-2">
           <MessageCircle className="w-4 h-4 text-blue-500" />
@@ -345,8 +345,8 @@ const PrivacyPolicy = () => {
       </div>
 
       <p className="text-gray-600 text-sm leading-relaxed mb-3">
-        At <strong>I-Mail.in</strong>, we value your privacy. We never share or
-        sell your personal information. Your data is securely encrypted and
+        At <strong>Shortmail.com</strong>, we value your privacy. We never share
+        or sell your personal information. Your data is securely encrypted and
         stored with industry-standard protection.
       </p>
 
@@ -356,7 +356,7 @@ const PrivacyPolicy = () => {
         <li>You can delete your account and data at any time.</li>
       </ul>
 
-      <p className="text-xs text-gray-500 mt-4">Last updated: October 2025</p>
+      <p className="text-xs text-gray-500 mt-4">Last updated: November 2025</p>
     </section>
   );
 };
